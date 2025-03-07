@@ -178,7 +178,7 @@ h2 {
 }
 
 .flex_item {
-    /* flex: 1;  */
+    flex: 1; 
     max-width: 33.33%; 
     text-align: center; 
 }
