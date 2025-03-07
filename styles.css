@@ -1,0 +1,339 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.container {
+    overflow-x: hidden; 
+    max-width: 100vw;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(34, 34, 34, 0.2);
+    color: #fff;
+    padding: 15px 20px;
+    text-align: center;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo {
+    height: 40px;
+    width: auto;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 28px;  
+    cursor: pointer;
+    position: absolute;
+    top: 35px;
+    right: 50px; 
+    z-index: 1100; 
+
+}
+
+nav {
+    display: flex;
+    justify-content: flex-end; 
+    padding-right: 40px; 
+}
+
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    
+}
+
+
+
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#about {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    text-align: right;
+    /* padding: 20px; */
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+#about::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: url('desktop-image.jpg') no-repeat center center/cover;
+    z-index: -1;
+    /*max-width: 100vw;   */
+}
+
+
+
+#about .content {
+    max-width: 40%;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    color: #f1c32a;
+    /* color: #D4AF37; */
+    border-radius: 10px;
+    margin-right: 10px;
+  
+}
+
+#about .content h1 {
+    font-size: 2rem; 
+}
+
+#about .content p {
+    font-size: 1.4rem; 
+}
+
+.section {
+    padding: 20px 20px;
+    text-align: center;
+   
+    position: relative;
+    z-index: 2;
+} 
+
+.bgw {
+    background-color: white;
+}
+
+.bggr{
+    background-color:#ebebeb;
+}
+
+h2 {
+    font-size: 1.8rem;
+}
+
+
+.partnerlist {
+    display: flex;
+    justify-content: space-around;
+
+}
+.forder {
+    width: 30%;
+}
+
+.forder img{
+    width: 100%;
+}
+
+.fleks {
+    display: flex;
+    justify-content:space-between;
+}
+
+.tekste {
+    vertical-align: middle;
+    font-size: 1.6rem;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.flex_item {
+    flex: 1; 
+    max-width: 33.33%; 
+    text-align: center; 
+}
+
+.foto {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center; }
+
+#WerdenPartner {
+    text-align: right;
+}
+
+
+
+
+
+#footer_links {
+    background-color: #030406;
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    white-space: nowrap; 
+
+    font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+}
+
+.forschl {
+    background-color: #ebebeb;
+    
+}
+
+.forschl div {
+    color: red;
+    font-size: 5rem;
+    margin: 0 auto;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+
+    #about::before {
+        background: url('mobile-image.jpg') no-repeat center center/cover;
+        width: 100%;
+        max-width: 100%;
+        height: 100vh;
+        left: 0;
+        right: 0;
+    }
+
+    body {
+        font-size: 16px; 
+    }
+
+  
+    #about .content h1 {
+        font-size: 1.8rem;
+    }
+
+    #about .content p {
+        font-size: 1.5rem;
+    }
+
+
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-list {
+        display: none;
+        flex-direction: column;
+        background: rgba(34, 34, 34, 0.4);
+        position: absolute;
+        top: 60px;
+             width: 100%;
+        padding: 10px 0;
+        left: 0;
+          }
+
+    .nav-list.active {
+        display: flex;
+    }
+
+    nav ul li {
+        text-align: center;
+        padding: 10px 0;
+    }
+    .section {
+        padding: 10px 0px;
+        text-align: center;
+
+    } 
+    #about {
+        justify-content: center;
+        text-align: center;
+    }
+    
+    #about .content {
+        max-width: 90%;
+        margin: 0px;  
+    }
+
+    h2 {
+        font-size: 1.4rem;
+    }
+
+
+
+    .partnerlist {
+       flex-direction: column;
+        justify-content: center;
+        
+    
+    }
+    .forder {
+        width: 80%;
+    }
+    
+    .forder img{
+        width: 100%;
+    }
+.hide {
+    display: none;
+}
+
+    .fleks {
+        display: flex;
+        flex-direction: column;
+        
+    }
+
+    .tekste {
+        vertical-align: middle;
+        font-size: 1.2rem;
+        width: 80%;
+        margin: 0 auto;
+        
+    }
+
+    .footer_col{
+        margin: 0 auto;
+    }
+
+
+}
+
+
+
+
+
+
+
+
