@@ -271,20 +271,20 @@ h2 {
 
 
 #footer_links {
-    background-color: #030406;
-    color: white;
+    background-color: #e2e2e2;
+    color: black;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-around;
     white-space: nowrap; 
 
-    font-family: 'Montserrat', sans-serif;
+    /* font-family: 'Montserrat', sans-serif; */
   font-weight: 400;
 }
 
 .forschl {
-    background-color: #ebebeb;
+    background-color: white;
     
 }
 
@@ -311,7 +311,7 @@ h2 {
     }
 
   
-    #about .content h1 {
+    #about .content h2 {
         font-size: 1.8rem;
     }
 
