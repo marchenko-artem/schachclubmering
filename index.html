@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Schachclub Mering 1932 e.V.</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>SchachKlub Mering 1932 e.V.</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/modal.css">
+    <link rel="stylesheet" href="styles/termine.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <link rel="icon" href="ferein.ico">
 </head>
@@ -12,8 +15,16 @@
     <div class="container">
     <header>
         <div class="logo-container">
-            <img src="logo.png" alt="Schachclub Logo" class="logo">
-            <h1>Schachclub Mering</h1>
+            <img src="logo.png" alt="Schachklub Logo" class="logo">
+            <h1>Schachklub Mering</h1>
+
+
+            <!-- <div class="header-address">
+                <i class="fa-solid fa-location-dot"></i>
+                <a href="https://maps.app.goo.gl/CgwJGFru8RsRjc2EA" target="_blank">
+                    Klostergasse 2
+                </a>
+            </div> -->
         </div>
         
         <button class="menu-toggle">☰</button>
@@ -27,57 +38,124 @@
             </ul>
         </nav>
     </header>
-    
-
+<!--     
+    <i class="fa-solid fa-chess"></i> <!-- Иконка шахмат -
+    <i class="fa-brands fa-facebook"></i> Иконка Facebook -->
 
     <section id="about">
         <div class="content">
-            <h2>Willkommen im Schachclub Mering!</h2>
-            <p>Unser Verein ist seit 1932 ein Ort für Schachliebhaber. Erwachsene spielen spannende Partien, während Kinder Schach lernen.</p>
+            <h2>Willkommen im Schachklub Mering!</h2>
+            <p>Unser Verein ist seit 1932 ein Ort für Schachliebhaber. Erwachsene, Jugendliche und Kinder haben Spaß, lernen die Feinheiten des Schachspiels und spielen spannende Partien.</p>
             <p>Werde Teil unserer Gemeinschaft!</p>
             <!-- <a href="/verein">Mehr...</a> -->
+           
         </div>
     </section>
-    
+
+    <section id="ortundzeit" class="section bggr">
+        <div class="club-info">
+        <h2>Wo und Wann?</h2>
+        
+        <div class="location">
+          <i class="fa-solid fa-location-dot"></i>
+          <a href="https://maps.app.goo.gl/CgwJGFru8RsRjc2EA" target="_blank">
+            Klostergasse 2, 86415 Mering
+          </a><br>
+          Altes Kloster (1.Stock) 
+        </div>
+        <button class="parking-link" onclick="openParkingModal()">Information für Besucher mit dem Auto</button>
+        <div class="schedule">
+          <!-- <h3>Trainingszeiten für Jugend und Kinder</h3> -->
+          <p><strong>Trainingszeiten für Jugend und Kinder:</strong></p>
+          <ul>
+            <li>Mittwoch: 16:30 – 18:30</li>
+            <li>Freitag: 18:00 – 20:00</li>
+          </ul>
+          <p><strong>Schachabend der Erwachsenen:</strong></p>
+          <ul>
+            <li>Jeden Freitag, außer an Feiertagen: ab 20:00</li>
+          </ul>
+        </div>
+    </div>
+      </section>
+
+
+
+      <div class="parking-modal" id="parkingModal">
+        <div class="modal-content">
+          <span class="close-button" onclick="closeParkingModal()">×</span>
+          <img src="images/spiellokal_karte.jpg" alt="Parkplatzplan" class="parking-image">
+        </div>
+      </div>
+      
+
+
+
+    <section id="terminkalender" class="section bgw ">
+        <div class="content">
+            <h2>Terminkalender 2025</h2>
+            <button id="view-all-button">Alle Termine anzeigen</button>
+
+        </div>
+    </section>
 
 
 
 
 
-    <section id="kinder" class="section bgw">
+  
+      
+     
+      
+    <section id="news" class="section bggr">
+    <div class="news-container">
+        <h2 class="news-title">Neuigkeiten</h2>
+   
+        <div id="news-container">Wird geladen…</div>
+
+        <a href="./nachrichten/index.html" class="news-button">Alle Nachrichten ansehen</a>
+
+    </div>
+</section>
+
+
+
+
+
+    <section id="kinder" class="section bggr">
         <h2>Für Kinder und Jugendliche</h2>
         <div class="fleks">
             <div class="foto flex_item"><img src="20250228_183118.jpg" alt="Brett"></div>
             <div class="tekste  flex_item"> <p>Schach ist ein wunderbares Instrument zur Verbesserung der Konzentration, des Fokus und der Problemlösungsfähigkeit. <br> <br> 
                 Jeden Mittwoch von 16.30 bis 18.00 Uhr und jeden Freitag von 18.00 bis 19.30 Uhr lernen unsere Jugendlichen unter der Anleitung erfahrener Trainer die Regeln, Strategie und Taktik des Schachspiels. 
                 </p></div>
-            <div class="foto hide  flex_item"><img src="20250228_183657.jpg" alt="Brett"></div>
+            <!-- <div class="foto hide  flex_item"><img src="20250228_183657.jpg" alt="Brett"></div> -->
           
         </div>
     </section>
 
 
 
-    <section id="mentoren" class="section bggr">
-        <h2>Unsere Mentoren</h2>
+    <section id="trainer" class="section bggr">
+        <h2>Unsere Trainer</h2>
 
         <div class="coach-container">
             <div class="coach-card">
-                <img src="trainer1.jpg" alt="norbert" class="coach-photo">
+                <img src="trainer1.jpg" alt="Norbert Krug" class="coach-photo">
                 <div class="coach-info">
                     <div class="coach-name">Norbert Krug</div>
                     <div class="coach-description">
-                        ich spiele 55 Jahre Schach und bin ausgebildeter Trainer mit Lizenz C des Deutschen Schachbundes; vielfacher Meister von Schwaben und Augsburg im Blitz, Schnellschach und Normalschach; aktuell auch Bayr. Seniorenmeister im Blitz und Bronze im Schnellschach
+                       »Ich spiele 55 Jahre Schach und bin ausgebildeter Trainer mit Lizenz C des Deutschen Schachbundes; vielfacher Meister von Schwaben und Augsburg im Blitz, Schnellschach und Normalschach; aktuell auch Bayr. Seniorenmeister im Blitz und Bronze im Schnellschach«
                     </div>
                 </div>
             </div>
     
             <div class="coach-card">
-                <img src="trainer2.jpg" alt="Тренер 2" class="coach-photo">
+                <img src="trainer2.jpg" alt="Ernst-Michael Kürschner" class="coach-photo">
                 <div class="coach-info">
                     <div class="coach-name">Ernst-Michael Kürschner</div>
                     <div class="coach-description">
-                        ich spiele 55 Jahre Schach und bin ausgebildeter Trainer mit Lizenz C des Deutschen Schachbundes; vielfacher Meister von Schwaben und Augsburg im Blitz, Schnellschach und Normalschach; aktuell auch Bayr. Seniorenmeister im Blitz und Bronze im Schnellschach
+                        Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Curabitur quis quam ut lorem porta tincidunt at eget elit. Aliquam erat volutpat. Pellentesque et quam leo. Duis faucibus ipsum at sem lacinia hendrerit. Donec sagittis metus eget sagittis interdum. Ut lectus ex, vulputate nec elit quis, maximus semper diam. Praesent dapibus at justo id sagittis. Proin vitae porttitor libero. Sed laoreet risus nisl, eu accumsan sem aliquam id. Mauris eget commodo purus, id tristique lorem. 
                     
                     </div>
                 </div>
@@ -103,8 +181,10 @@
         <h2>Für Erwachsene</h2>
         <div class="fleks">
             <div class="foto"><img src="20250228_181254.jpg" alt="Brett"></div>           
-            <div class="tekste"> <p>Jeden Freitag außer an Feiertagen spielen wir ab 20:00 Uhr. <br> <br> Die stärksten Spieler vertreten den Klub bei verschiedenen Schachturnieren.</p></div>
-            <div class="foto hide"><img src="20250228_184137.jpg" alt="Brett"></div>
+            <div class="tekste"> <p>Jeden Freitag außer an Feiertagen spielen wir ab 20:00 Uhr. <br> <br> Die stärksten Spieler vertreten den Klub bei verschiedenen Schachturnieren.</p>
+                Weitere Informationen über den Club, das Management, die Satzung und mehr 
+            </div>
+            <!-- <div class="foto hide"><img src="20250228_184137.jpg" alt="Brett"></div> -->
         </div>
        
     </section>
@@ -132,27 +212,7 @@
     </section> -->
 
 
-<section id="news" class="section bggr">
-    <div class="news-container">
-        <h2 class="news-title">Neuigkeiten</h2>
-              
-        
-        
-        <div id="news-container">Wird geladen…</div>
 
-        
-        
-        
-        
-        
-        
-        <a href="./nachrichten/index.html" class="news-button">Alle Nachrichten ansehen</a>
-    
-    
-    
-    
-    </div>
-</section>
 
 
 <!-- <section  class="section bggr">
@@ -216,6 +276,7 @@
     
             <div class="footer_col">
             <h2>Besuchen Sie uns</h2>
+            <i class="fa-solid fa-location-dot"></i>
                 <a href="https://maps.app.goo.gl/CgwJGFru8RsRjc2EA">Klostergasse 2</a><br>
                 Altes Kloster, 86415 Mering (1.Stock) <br><br>
                 Mi: 16:30-18:00<br>
@@ -230,11 +291,11 @@
 
 
 
-<div class="forschl">
+<!-- <div class="forschl">
     <div>Bitte senden Sie Ihre Kommentare und Vorschläge zur Gestaltung und zum Inhalt der Website an:</div>
     <div>marchenkoart@web.de</div>
     <div>Danke!</div>
-</div>
+</div> -->
 
 
 

@@ -1,0 +1,729 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.container {
+    overflow-x: hidden; /* Полностью убираем горизонтальный скролл */
+    max-width: 100vw;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(34, 34, 34, 0.2);
+    color: #fff;
+    padding: 15px 20px;
+    text-align: center;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo {
+    height: 40px;
+    width: auto;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 28px;  /* Чуть увеличим размер для удобства */
+    cursor: pointer;
+    position: absolute;
+    top: 35px;
+    right: 50px; /* Убедимся, что кнопка не уходит за границы */
+    z-index: 1100; /* Поверх других элементов */
+
+}
+
+nav {
+    display: flex;
+    justify-content: flex-end; /* Отодвигаем меню влево, чтобы было место для кнопки */
+    padding-right: 40px; /* Доп. отступ справа */
+}
+
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    
+}
+
+
+
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+.header-address {
+    font-size: 14px;
+    color: #444;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 4px;
+}
+
+.header-address i {
+    color: #d12c2c; /* или цвет твоей палитры */
+}
+
+.header-address a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.club-info {
+    background: rgba(255, 255, 255, 0.05);
+    /* padding: 30px 20px; */
+    /* margin-top: 40px; */
+    border-radius: 12px;
+    color: black;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+
+.club-info h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.location {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    
+    font-size: 16px;
+    justify-content: center;
+}
+
+.location i {
+    color: #d12c2c;
+}
+
+.location a {
+    color: #12197e;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.location a:hover {
+    text-decoration: underline;
+}
+
+.parking-link {
+    display: flex;
+    margin: 0 auto;
+    background: none;
+    border: none;
+    color: #d12c2c;
+    font-size: 14px;
+    /* margin-left: 10px; */
+    cursor: pointer;
+    text-decoration: underline;
+    margin-bottom: 20px;
+}
+
+.parking-link:hover {
+    text-decoration: none;
+}
+
+
+
+
+
+
+.schedule h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.schedule ul {
+    padding-left: 20px;
+    margin-bottom: 15px;
+}
+
+.schedule li {
+    margin-bottom: 5px;
+}
+
+@media (max-width: 600px) {
+    .club-info {
+        padding: 20px 10px;
+    }
+
+    .club-info h2 {
+        font-size: 20px;
+    }
+
+    .location {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .location a {
+        font-size: 15px;
+    }
+}
+
+
+
+
+
+@media (max-width: 768px) {
+    .header-address {
+        justify-content: center;
+        font-size: 15px;
+    }
+
+    .logo-container {
+        text-align: center;
+    }
+}
+
+
+
+
+
+
+
+
+
+#about {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    text-align: right;
+    /* padding: 20px; */
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+#about::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: url('../images/desktop-image.jpg') no-repeat center center/cover;
+    z-index: -1;
+    /*max-width: 100vw;  Фиксируем ширину */
+}
+
+
+
+#about .content {
+    max-width: 40%;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    color: #f1c32a;
+    /* color: #D4AF37; */
+    border-radius: 10px;
+    margin-right: 10px;
+  
+}
+
+#about .content h1 {
+    font-size: 2rem; /* Увеличенный заголовок */
+}
+
+#about .content p {
+    font-size: 1.4rem; /* Увеличенный текст */
+}
+
+.section {
+    padding: 20px 20px;
+    text-align: center;
+   
+    position: relative;
+    z-index: 2;
+} 
+
+.bgw {
+    background-color: white;
+}
+
+.bggr{
+    background-color:#ebebeb;
+}
+
+h2 {
+    font-size: 1.8rem;
+}
+
+
+
+.coach-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.coach-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    max-width: 500px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.coach-card:hover {
+    transform: translateY(-5px);
+}
+
+.coach-photo {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    background-color: #ddd;
+}
+
+.coach-info {
+    padding: 20px;
+}
+
+.coach-name {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.coach-description {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.5;
+}
+
+
+
+
+
+.partnerlist {
+    display: flex;
+    justify-content: space-around;
+
+}
+.forder {
+    width: 30%;
+}
+
+.forder img{
+    width: 100%;
+}
+
+.fleks {
+    max-width: 800px;
+    display: flex;
+    justify-content:space-around;
+    margin: 0 auto;
+}
+
+.tekste {
+    vertical-align: middle;
+    font-size: 1.6rem;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.flex_item {
+    flex: 1; /* Равномерное распределение */
+    max-width: 50%; /* Чтобы точно не выходило за границы */
+    text-align: center; /* Если нужен центрированный текст */
+}
+
+.foto {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Центрируем по горизонтали */
+    justify-content: center; /* Центрируем по вертикали */}
+
+#WerdenPartner {
+    text-align: right;
+}
+
+
+
+
+
+/* Стили для раздела новостей */
+#news {
+    background-color: #f9f9f9;
+    padding: 50px 20px;
+    text-align: left;
+}
+
+.news-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.news-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.news-content {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* .carouselwrapper {
+    height: 600px;
+} */
+
+.news-carousel {
+    
+    
+    
+    margin: 20px auto;
+    
+    border-radius: 8px;
+
+    width: 600px;  /* Фиксированная ширина карусели */
+    height: 600px; /* Фиксированная высота карусели */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Чтобы избежать выхода изображений за границы */
+    position: relative;
+    background-color: #f0f0f0; /* Фон, если изображение не заполняет всю область */
+
+
+
+
+}
+
+
+
+.news-carousel img.active {
+    display: block;
+}
+
+
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+
+
+
+
+
+.carousel-images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    object-fit: contain; 
+
+    
+   
+
+
+    
+}
+
+.news-image {
+    
+    
+    
+    transition: opacity 0.5s;
+
+    max-width: 100%; /* Изображение не будет шире контейнера */
+    max-height: 100%; /* Изображение не будет выше контейнера */
+    object-fit: contain; /* Вписывает изображение без обрезки и потери пропорций */
+    display: none; /* По умолчанию скрыто */
+
+
+}
+
+.news-image.active {
+    display: block;
+}
+
+
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+.prev:hover, .next:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+
+
+
+
+.news-text {
+    position: relative;
+}
+
+.full-text {
+    display: none;
+}
+.short-text {
+    display: block;
+}
+.toggle-text {
+    cursor: pointer;
+    color: blue;
+    text-decoration: underline;
+    background: none;
+    border: none;
+    font-size: 14px;
+}
+
+.toggle-text:hover {
+    text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Стили для раздела новостей */
+
+
+#footer_links {
+    background-color: #e2e2e2;
+    color: black;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    white-space: nowrap; 
+
+    /* font-family: 'Montserrat', sans-serif; */
+  font-weight: 400;
+}
+
+.forschl {
+    background-color: white;
+    
+}
+
+.forschl div {
+    color: red;
+    font-size: 5rem;
+    margin: 0 auto;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+
+    #about::before {
+        background: url('../images/mobile-image.jpg') no-repeat center center/cover;
+        width: 100%;
+        max-width: 100%;
+        height: 100vh;
+        left: 0;
+        right: 0;
+    }
+
+    body {
+        font-size: 16px; /* Чуть меньше на мобильных */
+    }
+
+  
+    #about .content h2 {
+        font-size: 1.8rem;
+    }
+
+    #about .content p {
+        font-size: 1.5rem;
+    }
+
+
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-list {
+        display: none;
+        flex-direction: column;
+        background: rgba(34, 34, 34, 0.4);
+        position: absolute;
+        top: 60px;
+             width: 100%;
+        padding: 10px 0;
+        left: 0;
+          }
+
+    .nav-list.active {
+        display: flex;
+    }
+
+    nav ul li {
+        text-align: center;
+        padding: 10px 0;
+    }
+    .section {
+        padding: 10px 0px;
+        text-align: center;
+
+    } 
+    #about {
+        justify-content: center;
+        text-align: center;
+    }
+    
+    #about .content {
+        max-width: 90%;
+        margin: 0px;  
+    }
+
+    h2 {
+        font-size: 1.4rem;
+    }
+
+
+    .news-carousel {
+       
+        margin: 10px auto;
+            
+    
+        width: 100%;  /* Фиксированная ширина карусели */
+        height: 400px; /* Фиксированная высота карусели */
+        
+           
+        
+        
+    
+    
+    }
+
+
+
+
+
+    .partnerlist {
+       flex-direction: column;
+        justify-content: center;
+        
+    
+    }
+    .forder {
+        width: 80%;
+    }
+    
+    .forder img{
+        width: 100%;
+    }
+
+.hide {
+    display: none;
+}
+
+    .fleks {
+        display: flex;
+        flex-direction: column;
+        
+    }
+
+    .flex_item {
+        
+        max-width: 90%; /* Чтобы точно не выходило за границы */
+        
+    }
+
+    .tekste {
+        vertical-align: middle;
+        font-size: 1.2rem;
+        width: 80%;
+        margin: 0 auto;
+        
+    }
+
+    .footer_col{
+        margin: 0 auto;
+    }
+
+
+}
+
+
+
+
+
+
+
+

@@ -257,3 +257,50 @@ function setupCarousel() {
     window.addEventListener("scroll", revealSections);
     revealSections(); // Проверка при загрузке страницы
 });
+
+
+
+
+
+function openParkingModal() {
+    document.getElementById("parkingModal").style.display = "flex";
+  }
+
+  function closeParkingModal() {
+    document.getElementById("parkingModal").style.display = "none";
+  }
+
+  // Закрытие при клике вне модального контента
+  window.addEventListener("click", function(event) {
+    const modal = document.getElementById("parkingModal");
+    if (event.target === modal) {
+      closeParkingModal();
+    }
+  });
+
+
+
+
+
+
+
+
+//   Termine
+const viewAllButton = document.getElementById('view-all-button');
+        const allEventsModal = document.getElementById('all-events-modal');
+        const closeButton = document.querySelector('.close-button');
+
+        viewAllButton.addEventListener('click', () => {
+            allEventsModal.style.display = 'block';
+        });
+
+        closeButton.addEventListener('click', () => {
+            allEventsModal.style.display = 'none';
+        });
+
+        window.addEventListener('click', (event) => {
+            if (event.target === allEventsModal) {
+                allEventsModal.style.display = 'none';
+            }
+        });
+// Termine endung
