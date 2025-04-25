@@ -143,7 +143,7 @@ async function loadNews() {
 
         const newsHtml = `
             <div class="news-item">
-                <h2>${latestNews.title}</h2>
+                <h3>${latestNews.title}</h3>
                 <small>${formattedDate}</small>
                <p class="news-text">
           <div class="full-text" style="display: none;">${fullText}</div>
@@ -286,21 +286,18 @@ function openParkingModal() {
 
 
 //   Termine
-const viewAllButton = document.getElementById('view-all-button');
-        const allEventsModal = document.getElementById('all-events-modal');
-        const closeButton = document.querySelector('.close-button');
-
-        viewAllButton.addEventListener('click', () => {
-            allEventsModal.style.display = 'block';
-        });
-
-        closeButton.addEventListener('click', () => {
-            allEventsModal.style.display = 'none';
-        });
-
-        window.addEventListener('click', (event) => {
-            if (event.target === allEventsModal) {
-                allEventsModal.style.display = 'none';
-            }
-        });
+document.getElementById("showModalBtn").addEventListener("click", function() {
+    document.getElementById("scheduleModal").style.display = "block";
+  });
+  
+  document.getElementById("closeModalBtn").addEventListener("click", function() {
+    document.getElementById("scheduleModal").style.display = "none";
+  });
+  
+  window.addEventListener("click", function(event) {
+    const modal = document.getElementById("scheduleModal");
+    if (event.target === modal) {
+      modal.style.display = "none";
+    }
+  });
 // Termine endung

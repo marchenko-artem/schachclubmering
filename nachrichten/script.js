@@ -145,7 +145,7 @@ async function loadNews() {
         newsData.sort((a, b) => new Date(b.date) - new Date(a.date));
         displayNews();
     } catch (error) {
-        console.error("Ошибка загрузки новостей:", error);
+        console.error("Fehler beim Laden von Nachrichten:", error);
         document.getElementById("news-container").innerHTML = "<p>Fehler</p>";
     }
 }
@@ -176,8 +176,8 @@ function displayNews() {
             <div class="news-item">
                 <h3>${news.title}</h3>
                 <p class="news-text">
-                    <div class="short-text">${shortText}</div>
-                    <div class="full-text">${fullText}</div>
+                   <div class="short-text">${shortText}</div>
+<div class="full-text">${fullText}</div>
                     <button class="toggle-text">Weiterlesen</button>
                 </p>
                 <small>${formattedDate}</small>
@@ -199,25 +199,41 @@ function displayNews() {
     updatePaginationButtons();
 }
 
+// function setupToggleText() {
+//     document.querySelectorAll(".toggle-text").forEach(button => {
+//         button.addEventListener("click", function () {
+//             const newsItem = this.closest(".news-item");
+//             const shortText = newsItem.querySelector(".short-text");
+//             const fullText = newsItem.querySelector(".full-text");
+
+//             if (fullText.style.display === "none") {
+//                 shortText.style.display = "none";
+//                 fullText.style.display = "block";
+//                 this.textContent = "Ausblenden";
+//             } else {
+//                 shortText.style.display = "block";
+//                 fullText.style.display = "none";
+//                 this.textContent = "Weiterlesen";
+//             }
+//         });
+//     });
+// }
+
 function setupToggleText() {
     document.querySelectorAll(".toggle-text").forEach(button => {
         button.addEventListener("click", function () {
             const newsItem = this.closest(".news-item");
-            const shortText = newsItem.querySelector(".short-text");
-            const fullText = newsItem.querySelector(".full-text");
+            newsItem.classList.toggle("expanded");
 
-            if (fullText.style.display === "none") {
-                shortText.style.display = "none";
-                fullText.style.display = "block";
-                this.textContent = "Ausblenden";
-            } else {
-                shortText.style.display = "block";
-                fullText.style.display = "none";
-                this.textContent = "Weiterlesen";
-            }
+            this.textContent = newsItem.classList.contains("expanded")
+                ? "Ausblenden"
+                : "Weiterlesen";
         });
     });
 }
+
+
+
 
 function setupCarousel() {
     document.querySelectorAll(".news-carousel").forEach(carousel => {

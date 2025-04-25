@@ -125,7 +125,7 @@ h2 {
     flex: 1; /* Равномерное распределение */
     max-width: 33.33%; /* Чтобы точно не выходило за границы */
     text-align: center; /* Если нужен центрированный текст */
-}
+}ы
 
 .foto {
     display: flex;
@@ -136,7 +136,18 @@ h2 {
 
 
 
-
+    .full-text {
+        display: none;
+      }
+      
+      .news-item.expanded .full-text {
+        display: block;
+      }
+      
+      .news-item.expanded .short-text {
+        display: none;
+      }
+      
 
 
 /* Стили для раздела новостей */
