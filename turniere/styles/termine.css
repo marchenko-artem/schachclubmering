@@ -126,6 +126,10 @@ tr:hover {
 }
 
 @media (max-width: 768px) {
+  .responsive-table {
+    margin: 0 5px 0 5px;
+  }
+
   .responsive-table table,
   .responsive-table thead,
   .responsive-table tbody,
@@ -134,10 +138,6 @@ tr:hover {
   .responsive-table tr {
     display: block;
     width: 100%;
-  }
-
-  .responsive-table {
-    margin: 0 5px 0 5px;
   }
 
   .responsive-table thead tr {

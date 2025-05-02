@@ -1,236 +1,182 @@
 <!DOCTYPE html>
 <html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SchachKlub Mering 1932 e.V.</title>
-    <link rel="stylesheet" href="styles/styles.css">
-    <link rel="stylesheet" href="styles/modal.css">
-    <link rel="stylesheet" href="styles/termine.css">
-   
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
-    <link rel="icon" href="images/ferein.ico">
-</head>
-<body>
+    <link rel="stylesheet" href="styles/styles.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <link rel="icon" href="images/ferein.ico" />
+  </head>
+  <body>
     <div class="container">
-    <header>
+      <header>
         <div class="logo-container">
-            <img src="images/logo.png" alt="Schachklub Logo" class="logo">
-            <h1>Schachklub Mering</h1>
+          <img src="images/logo.png" alt="Schachklub Logo" class="logo" />
+          <h1>Schachklub Mering</h1>
 
-
-            <!-- <div class="header-address">
+          <!-- <div class="header-address">
                 <i class="fa-solid fa-location-dot"></i>
                 <a href="https://maps.app.goo.gl/CgwJGFru8RsRjc2EA" target="_blank">
                     Klostergasse 2
                 </a>
             </div> -->
         </div>
-        
+
         <button class="menu-toggle">☰</button>
         <nav>
-            <ul class="nav-list">
-                <li><a href="../index.html">Homepage</a></li>
-                <!-- <li><a href="./verein/index.html">Verein</a></li> -->
-                <li><a href="#schedule">Turniere</a></li>
-                <li><a href="#tournaments">Mannschaften</a></li>
-                <!-- <li><a href="/geschichte">Geschichte</a></li> -->
-                <!-- <li><a href="#partners">Partner</a></li> -->
-            </ul>
+          <ul class="nav-list">
+            <li><a href="../index.html">Homepage</a></li>
+            <li><a href="#">Verein</a></li>
+            <li><a href="../turniere/index.html">Turniere</a></li>
+            <li><a href="../mannschaften/index.html">Mannschaften</a></li>
+            <!-- <li><a href="/geschichte">Geschichte</a></li> -->
+            <!-- <li><a href="#partners">Partner</a></li> -->
+          </ul>
         </nav>
-    </header>
-<!--     
-    <i class="fa-solid fa-chess"></i> <!-- Иконка шахмат -
-    <i class="fa-brands fa-facebook"></i> Иконка Facebook -->
+      </header>
 
-    <!-- <section id="about">
-        <div class="content">
-            <h2>Willkommen im Schachklub Mering!</h2>
-            <p>Unser Verein ist seit 1932 ein Ort für Schachliebhaber. Erwachsene, Jugendliche und Kinder haben Spaß, lernen die Feinheiten des Schachspiels und spielen spannende Partien.</p>
-            <p>Werde Teil unserer Gemeinschaft!</p>
-           
-           
-        </div>
-    </section> -->
-
-
-    <section>
+      <section>
         <h1>Über den Verein</h1>
-        <p style="text-align: center;">Lerne unseren Schachclub kennen</p>
       </section>
 
+      <section id="news" class="section bgw">
+        <div class="news-container">
+          <div>
+            Der Schachklub Mering wurde im Jahr 1932 gegründet und bietet
+            Spielern aller Altersklassen eine Heimat. Unsere Ziele sind die
+            Förderung des Schachsports, die Jugendarbeit und die Teilnahme an
+            Turnieren.
+          </div>
 
+          <h2>Vorstand</h2>
+          <ul>
+            <li><strong>1. Vorsitzender:</strong> Stefan Stoll</li>
+            <li><strong>2. Vorsitzender:</strong> Klaus-Wilhelm Jovy</li>
+            <li>
+              <strong
+                >Mannschaftsführer 1. Mannschaft, Kassenprüfer,
+                Jugendtrainer</strong
+              >
+              Norbert Krug
+            </li>
+            <li><strong>2. Jugendleiter</strong> Ernst-Michael Kürschner</li>
+            <li><strong>1. Spielleiter, Webmaster</strong> Bernhard Widl</li>
+          </ul>
 
+          <h2>Satzung</h2>
+          <p>
+            Hier kannst du unsere aktuelle Vereinssatzung als PDF herunterladen:
+            <br />
+            <a href="/dokumente/satzung.pdf" target="_blank" class="button"
+              >📄 Satzung herunterladen</a
+            >
+          </p>
 
-
-
-    
-      
-     
-      
-    <section id="news" class="section bgw">
-    <div class="news-container">
-        <h2 class="news-title">Unser Verein</h2>
-   
- 
-
-
-        <div>  Der Schachklub Mering wurde im Jahr 1932 gegründet und bietet Spielern aller Altersklassen eine Heimat.
-            Unsere Ziele sind die Förderung des Schachsports, die Jugendarbeit und die Teilnahme an Turnieren.
-         </div>
-
-         <h2>Vorstand</h2>
-         <ul>
-           <li><strong>1. Vorsitzender:</strong> Stefan Stoll</li>
-           <li><strong>2. Vorsitzender:</strong> Klaus-Wilhelm Jovy</li>
-           <li><strong>Mannschaftsführer 1. Mannschaft, Kassenprüfer, Jugendtrainer</strong> Norbert Krug</li>
-           <li><strong>2. Jugendleiter</strong> Ernst-Michael Kürschner</li>
-           <li><strong>1. Spielleiter, Webmaster</strong> Bernhard Widl</li>
-         </ul>
-     
-         <h2>Satzung</h2>
-         <p>
-           Hier kannst du unsere aktuelle Vereinssatzung als PDF herunterladen:
-           <br />
-           <a href="/dokumente/satzung.pdf" target="_blank" class="button">📄 Satzung herunterladen</a>
-         </p>
-     
-         <h2>Mitgliedsbeiträge</h2>
-         <table>
-           <thead>
-             <tr>
-               <th>Mitgliedstyp</th>
-               <th>Jahresbeitrag</th>
-               <!-- <th>Bemerkung</th> -->
-             </tr>
-           </thead>
-           <tbody>
-             <tr>
-               <td>Passivbeitrag Erwachsene</td>
-               <td>35 €</td>
-               <!-- <td></td> -->
-             </tr>
-             <tr>
+          <h2>Mitgliedsbeiträge</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Mitgliedstyp</th>
+                <th>Jahresbeitrag</th>
+                <!-- <th>Bemerkung</th> -->
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
                 <td>Aktivenbeitrag Erwachsene</td>
                 <td>75 €</td>
                 <!-- <td></td> -->
               </tr>
-             <tr>
-               <td>Jugendliche bis 18 Jahre</td>
-               <td>35 €</td>
-               <!-- <td>Nachweis erforderlich</td> -->
-             </tr>
-             <tr>
-                <td>Schüler, Studenten, Wehrpflichtige, Zivis, Lehrlinge, Arbeitslose</td>
+              <tr>
+                <td>Passivbeitrag Erwachsene</td>
+                <td>35 €</td>
+                <!-- <td></td> -->
+              </tr>
+
+              <tr>
+                <td>
+                  Schüler, Studenten, Wehrpflichtige, Zivis, Lehrlinge,
+                  Arbeitslose
+                </td>
                 <td>35 €</td>
                 <!-- <td>Nachweis erforderlich</td> -->
               </tr>
-             <tr>
-               <td>Kinder bis 12 Jahre</td>
-               <td>15 €</td>
-               <!-- <td></td> -->
-             </tr>
-             <tr>
-               <td>Familien</td>
-               <td>85 €</td>
-               <!-- <td>Für Familien im selben Haushalt</td> -->
-             </tr>
-           </tbody>
-         </table>
-     
-         <h2>Mitglied werden</h2>
-         <p>
-           Wir freuen uns über neue Mitglieder! Einfach den Aufnahmeantrag ausfüllen und beim Vorstand abgeben.
-           <br />
-           <a href="/dokumente/aufnahmeantrag.pdf" target="_blank" class="button">📄 Aufnahmeantrag herunterladen</a>
-         </p>
-     
-         <h2>Trainings- und Spielzeiten</h2>
-         <ul>
-           <li>🧒 Mittwoch 18:00 – 20:00 Uhr – Jugendtraining</li>
-           <li>♟️ Freitag 19:00 – 22:00 Uhr – Vereinsabend für alle</li>
-         </ul>
+              <tr>
+                <td>Kinder bis 12 Jahre</td>
+                <td>15 €</td>
+                <!-- <td></td> -->
+              </tr>
+              <tr>
+                <td>Familien</td>
+                <td>85 €</td>
+                <!-- <td>Für Familien im selben Haushalt</td> -->
+              </tr>
+            </tbody>
+          </table>
 
+          <h2>Mitglied werden</h2>
+          <p>
+            Wir freuen uns über neue Mitglieder! Einfach den Aufnahmeantrag
+            ausfüllen und beim Vorstand abgeben.
+            <br />
+            <a
+              href="/dokumente/aufnahmeantrag.pdf"
+              target="_blank"
+              class="button"
+              >📄 Aufnahmeantrag herunterladen</a
+            >
+          </p>
 
-
-
-            </div>
-</section>
-
-   
-
-
-
-
-    <div class="footer">
-        
-        <div id="footer_links">
-            <div class="footer_col">
-                <h2>Besuchen Sie uns</h2>
-                <i class="fa-solid fa-location-dot"></i>
-                    <a href="https://maps.app.goo.gl/X1HnCob4SfoeHccY9">Klostergasse 2</a><br>
-                    Altes Kloster, 86415 Mering (1.Stock) <br><br>
-                    
-                    Fr: 18:00-22:00<br><br>
-                    
-                </div>
-
-
-
-                <div class="footer_col">
-                    <h2>Schreiben Sie uns</h2>
-                        <!-- <a href="tel:0160 5555555">(0160) 555-5555</a><br><br> -->
-                         E-Mail:
-                          sk-mering(at)web.de
-                  
-                    </div>
-
-            <div class="footer_col">
-                <h2>Legal</h2>
-               
-                   <a href="/impressum">Impressum</a><br><br>
-                    <a href="/datenschutz/">Datenschutzerklärung</a>
-                 
-                
-            </div>
-    
-     
-               
-           
-    
-          
-    
+          <h2>Trainings- und Spielzeiten</h2>
+          <ul>
+            <li>🧒 Mittwoch 18:00 – 20:00 Uhr – Jugendtraining</li>
+            <li>🧒 Freitag 18:00 – 20:00 Uhr – Jugendtraining</li>
+            <li>♟️ Freitag 19:00 – 22:00 Uhr – Vereinsabend für alle</li>
+          </ul>
         </div>
-       
-       
-    </div>
+      </section>
 
+      <div class="footer">
+        <div id="footer_links">
+          <div class="footer_col">
+            <h2>Besuchen Sie uns</h2>
+            <i class="fa-solid fa-location-dot"></i>
+            <a href="https://maps.app.goo.gl/X1HnCob4SfoeHccY9"
+              >Klostergasse 2</a
+            ><br />
+            Altes Kloster, 86415 Mering (1.Stock) <br /><br />
 
+            Fr: 18:00-22:00<br /><br />
+          </div>
 
-<!-- <div class="forschl">
+          <div class="footer_col">
+            <h2>Schreiben Sie uns</h2>
+            <!-- <a href="tel:0160 5555555">(0160) 555-5555</a><br><br> -->
+            E-Mail: sk-mering(at)web.de
+          </div>
+
+          <div class="footer_col">
+            <h2>Legal</h2>
+
+            <a href="../impressum/index.html">Impressum</a><br /><br />
+            <a href="../datenschutz/index.html">Datenschutzerklärung</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- <div class="forschl">
     <div>Bitte senden Sie Ihre Kommentare und Vorschläge zur Gestaltung und zum Inhalt der Website an:</div>
     <div>marchenkoart@web.de</div>
     <div>Danke!</div>
 </div> -->
-
-
-
-
-
-
-
-
-
-
-    
-</div>
-<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-<script src="script.js"></script>
-
-
-
-
-
-</body>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="script.js"></script>
+  </body>
 </html>

@@ -5,7 +5,7 @@
 
 .responsive-table {
   overflow-x: auto;
-  max-width: 800px;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
@@ -16,19 +16,20 @@
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(66, 64, 64, 0.1);
+  text-align: center;
 }
 
 .responsive-table th,
 .responsive-table td {
   padding: 16px;
-  text-align: left;
+  /* text-align: left; */
   vertical-align: top;
   border-bottom: 1px solid #ddd;
 }
 
 .responsive-table th {
-  background-color: #4d4a4a;
-  color: white;
+  background-color: #817e7e;
+  /* color: white; */
   text-align: center;
 }
 
@@ -38,7 +39,6 @@
 }
 
 .responsive-table a {
-  color: #333;
   font-weight: bold;
   text-decoration: underline;
 }
@@ -108,12 +108,12 @@ th,
 td {
   border: 1px solid #ddd;
   padding: 8px;
-  text-align: left;
+  /* text-align: left; */
 }
 
 th {
   background-color: #007bff;
-  color: white;
+  /* color: white; */
   font-weight: bold;
 }
 
@@ -125,7 +125,47 @@ tr:hover {
   background-color: #ddd;
 }
 
+/*  */
+.overflow-x-auto {
+  overflow-x: auto;
+}
+
+.season-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 800px;
+}
+
+.season-table th,
+.season-table td {
+  border: 1px solid #ccc;
+  padding: 0.5rem;
+  vertical-align: top;
+  text-align: left;
+}
+
+.season-table thead th {
+  background-color: #f4f4f4;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.season-table a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.season-table a:hover {
+  text-decoration: underline;
+}
+/*  */
+
 @media (max-width: 768px) {
+  .responsive-table {
+    margin: 0 5px 0 5px;
+  }
+
   .responsive-table table,
   .responsive-table thead,
   .responsive-table tbody,
@@ -134,10 +174,6 @@ tr:hover {
   .responsive-table tr {
     display: block;
     width: 100%;
-  }
-
-  .responsive-table {
-    margin: 0 5px 0 5px;
   }
 
   .responsive-table thead tr {
