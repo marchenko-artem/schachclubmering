@@ -619,3 +619,19 @@ h2 {
     text-align: center;
   }
 }
+
+@media (prefers-color-scheme: dark) {
+  #about::before {
+    background: url("../images/mobile-image.jpg") no-repeat center center/cover;
+    filter: brightness(1.1); /* Немного осветляет картинку */
+  }
+
+  #about .content {
+    background: rgba(
+      0,
+      0,
+      0,
+      0.6
+    ); /* Чуть темнее, чтобы сохранить читаемость */
+  }
+}
