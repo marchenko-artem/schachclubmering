@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SchachKlub Mering 1932 e.V.</title>
+    <title>Schachklub Mering 1932 e.V.</title>
     <link rel="stylesheet" href="styles/styles.css" />
     <link rel="stylesheet" href="styles/modal.css" />
     <link rel="stylesheet" href="styles/termine.css" />
@@ -12,8 +12,60 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
 
-    <link rel="icon" href="images/ferein.ico" />
+    <link rel="icon" href="/verein.ico" sizes="any" />
+    <link
+      rel="apple-touch-icon"
+      href="/images/apple-touch-icon.png"
+      sizes="180x180"
+    />
+
+    <meta
+      name="description"
+      content="Schachklub Mering 1932 e.V.: Training, Turniere und Mannschaften in Mering. Gäste sind willkommen!"
+    />
+    <link rel="canonical" href="https://sk-mering.de/" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <meta property="og:title" content="Schachklub Mering 1932 e.V." />
+    <meta
+      property="og:description"
+      content="Training, Turniere und Mannschaften. Gäste sind willkommen!"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="de_DE" />
+    <meta property="og:image" content="images/og.jpg" />
+
+    <!-- Google Analytics (Kategorie: Analyse) -->
+    <script
+      type="text/plain"
+      data-consent="analytics"
+      src="https://www.googletagmanager.com/gtag/js?id=G-XXXX"
+    ></script>
+    <script type="text/plain" data-consent="analytics">
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXX', { anonymize_ip: true });
+    </script>
+
+    <!-- Beispiel Marketing-Pixel (Kategorie: Marketing) -->
+    <script type="text/plain" data-consent="marketing">
+      /* Hier kann z.B. der Meta Pixel rein.
+         Beispiel:
+         !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+         n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+         n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+         t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}
+         (window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
+         fbq('init', 'YOUR_PIXEL_ID'); fbq('track', 'PageView'); */
+    </script>
   </head>
   <body>
     <div class="container">
@@ -29,14 +81,9 @@
             <li><a href="./verein/index.html">Verein</a></li>
             <li><a href="./turniere/index.html">Turniere</a></li>
             <li><a href="./mannschaften/index.html">Mannschaften</a></li>
-            <!-- <li><a href="/geschichte">Geschichte</a></li> -->
-            <!-- <li><a href="#partners">Partner</a></li> -->
           </ul>
         </nav>
       </header>
-      <!--     
-    <i class="fa-solid fa-chess"></i> <!-- Иконка шахмат -
-    <i class="fa-brands fa-facebook"></i> Иконка Facebook -->
 
       <section id="about">
         <div class="content">
@@ -47,7 +94,6 @@
             Schachspiels und spielen spannende Partien.
           </p>
           <p>Werde Teil unserer Gemeinschaft!</p>
-          <!-- <a href="/verein">Mehr...</a> -->
         </div>
       </section>
 
@@ -57,7 +103,11 @@
 
           <div class="location">
             <i class="fa-solid fa-location-dot"></i>
-            <a href="https://maps.app.goo.gl/X1HnCob4SfoeHccY9" target="_blank">
+            <a
+              href="https://maps.app.goo.gl/X1HnCob4SfoeHccY9"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Klostergasse 2, 86415 Mering </a
             ><span>Altes Kloster (1.Stock)</span>
           </div>
@@ -96,40 +146,13 @@
 
           <div class="responsive-table">
             <div id="naechste-termine"></div>
-            <!-- <table>
-              <thead>
-                <tr>
-                  <th>Datum</th>
-                  <th>Art</th>
-                  <th>Beschreibung</th>
-                </tr>
-              </thead>
-              <tbody id="short-schedule">
-                <tr>
-                  <td>Fr, 02.05</td>
-                  <td>Vereinsabend</td>
-                  <td>(Brückentag)</td>
-                </tr>
-                <tr>
-                  <td>Sa, 03.05</td>
-                  <td>3. Mannschaft</td>
-                  <td>Mering 3 - SF Augsburg 6</td>
-                </tr>
-                <tr>
-                  <td>Sa, 10.05</td>
-                  <td>2. Mannschaft</td>
-                  <td>Mering 2 - Lechhausen</td>
-                </tr>
-              </tbody>
-            </table> -->
+
             <div style="text-align: center; margin-top: 20px">
               <button id="showModalBtn" class="view-all-btn">
                 Alle Termine anzeigen
               </button>
             </div>
           </div>
-
-          <!-- <button id="view-all-button">Alle Termine anzeigen</button> -->
         </div>
       </section>
 
@@ -138,287 +161,6 @@
           <span class="close" id="closeModalBtn">&times;</span>
           <div class="table-scroll-wrapper">
             <div class="responsive-table">
-              <!-- <table>
-                <thead>
-                  <tr>
-                    <th>Datum</th>
-                    <th>Art</th>
-                    <th>Beschreibung</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Fr, 10.01</td>
-                    <td>Veranstaltung</td>
-                    <td>Neujahrsempfang</td>
-                  </tr>
-                  <tr>
-                    <td>Fr, 17.01</td>
-                    <td>Blitz</td>
-                    <td>Monatsblitz 1 von 7</td>
-                  </tr>
-                  <tr>
-                    <td>Fr, 24.01</td>
-                    <td>Schnellschach</td>
-                    <td>Gründerpokal 1 von 4</td>
-                  </tr>
-                  <tr>
-                    <td>Fr, 31.01</td>
-                    <td>1. Mannschaft</td>
-                    <td>Vorbereitungsabend</td>
-                  </tr>
-                  <tr>
-                    <td>Sa, 01.02</td>
-                    <td>3. Mannschaft</td>
-                    <td>Friedberg 3 - Mering 3</td>
-                  </tr>
-                  <tr>
-                    <td>So, 02.02</td>
-                    <td>1. Mannschaft</td>
-                    <td>Kriegshaber 2 - Mering</td>
-                  </tr>
-                  <tr>
-                    <td>Fr, 07.02</td>
-                    <td>Blitz</td>
-                    <td>Monatsblitz 2 von 7</td>
-                  </tr>
-                  <tr>
-                    <td>Fr, 14.02</td>
-                    <td>Vereinsabend</td>
-                    <td>Jahreshauptversammlung verlegt auf 7.3.</td>
-                  </tr>
-                  <tr>
-                    <td>Fr, 21.02</td>
-                    <td>1. Mannschaft</td>
-                    <td>Vorbereitungsabend</td>
-                  </tr>
-                  <tr>
-                    <td>So, 23.02</td>
-                    <td>1. Mannschaft</td>
-                    <td>Mering - Kaufbeuren</td>
-                  </tr>
-                  <tr>
-                    <td>Fr, 28.02</td>
-                    <td>Pokal</td>
-                    <td>FMG-Pokal</td>
-                  </tr>
-                  <tr>
-                    <td>Fr, 07.03</td>
-                    <td>Veranstaltung</td>
-                    <td>Jahreshauptversammlung</td>
-                  </tr>
-                  <tr>
-                    <td>Fr, 14.03</td>
-                    <td>Blitz</td>
-                    <td>Monatsblitz 3 von 7</td>
-                  </tr>
-                  <tr>
-                    <td>Sa, 29.03</td>
-                    <td>2. Mannschaft</td>
-                    <td>Mering 2 - Keres Augsburg</td>
-                  </tr>
-                  <tr>
-                    <td>Fr, 04.04</td>
-                    <td>1. Mannschaft</td>
-                    <td>Vorbereitungsabend</td>
-                  </tr>
-                  <tr>
-                    <td>So, 06.04</td>
-                    <td>1. Mannschaft</td>
-                    <td>Mering - Königsbrunn</td>
-                  </tr>
-                  <tr>
-                    <td>Fr, 11.04</td>
-                    <td>Schnellschach</td>
-                    <td>Gründerpokal 2 von 4</td>
-                  </tr>
-                  <tr>
-                    <td>Fr, 18.04</td>
-                    <td>Feiertag</td>
-                    <td>geschlossen (Karfreitag)</td>
-                  </tr>
-                  <tr>
-                    <td>Fr, 25.04</td>
-                    <td>Veranstaltung</td>
-                    <td>Schafkopfturnier</td>
-                  </tr>
-                  <tr>
-                    <td>Fr, 02.05</td>
-                    <td>Vereinsabend</td>
-                    <td>(Brückentag)</td>
-                  </tr>
-                  <tr>
-                    <td>Sa, 03.05</td>
-                    <td>3. Mannschaft</td>
-                    <td>Mering 3 - SF Augsburg 6</td>
-                  </tr>
-                  <tr>
-                    <td>Sa, 10.05</td>
-                    <td>2. Mannschaft</td>
-                    <td>Mering 2 - Lechhausen</td>
-                  </tr>
-                  <tr>
-                    <td>Sa, 17.05</td>
-                    <td>3. Mannschaft</td>
-                    <td>Kriegshaber 5- Mering 3</td>
-                  </tr>
-                  <tr>
-                    <td>Fr, 23.05</td>
-                    <td>Blitz</td>
-                    <td>Monatsblitz 4 von 7</td>
-                  </tr>
-                  <tr>
-                    <td>Fr, 30.05</td>
-                    <td>Vereinsabend</td>
-                    <td>(Brückentag)</td>
-                  </tr>
-                  <tr>
-                    <td>Fr, 06.06</td>
-                    <td>Schnellschach</td>
-                    <td>Gründerpokal 3 von 4</td>
-                  </tr>
-                  <tr>
-                    <td>Fr, 13.06</td>
-                    <td>Vereinsabend</td>
-                    <td>(Pfingstferien)</td>
-                  </tr>
-                  <tr>
-                    <td>Fr, 20.06</td>
-                    <td>Vereinsabend</td>
-                    <td>(Pfingstferien)</td>
-                  </tr>
-                  <tr>
-                    <td>Sa, 28.06</td>
-                    <td>Veranstaltung</td>
-                    <td>Grillabend (Lippgarten)</td>
-                  </tr>
-                  <tr>
-                    <td>Fr, 11.07</td>
-                    <td>Schnellschach</td>
-                    <td>Gründerpokal 4 von 4</td>
-                  </tr>
-                  <tr>
-                    <td>Fr, 18.07</td>
-                    <td>Veranstaltung</td>
-                    <td>Biergartenblitz (Badanger)</td>
-                  </tr>
-                  <tr>
-                    <td>Fr, 25.07</td>
-                    <td>Blitz</td>
-                    <td>Monatsblitz 5 von 7</td>
-                  </tr>
-                  <tr>
-                    <td>Fr, 01.08</td>
-                    <td>Vereinsabend</td>
-                    <td>(Sommerferien)</td>
-                  </tr>
-                  <tr>
-                    <td>Fr, 08.08</td>
-                    <td>Vereinsabend</td>
-                    <td>(Sommerferien)</td>
-                  </tr>
-                  <tr>
-                    <td>Fr, 15.08</td>
-                    <td>Feiertag</td>
-                    <td>(Mariä Himmelfahrt)</td>
-                  </tr>
-                  <tr>
-                    <td>Fr, 22.08</td>
-                    <td>Vereinsabend</td>
-                    <td>(Sommerferien)</td>
-                  </tr>
-                  <tr>
-                    <td>Fr, 29.08</td>
-                    <td>Vereinsabend</td>
-                    <td>(Sommerferien)</td>
-                  </tr>
-                  <tr>
-                    <td>Fr, 19.09</td>
-                    <td>Vereinsturnier</td>
-                    <td>Gruppen A+B Runde 1/5</td>
-                  </tr>
-                  <tr>
-                    <td>Fr, 26.09</td>
-                    <td>Blitz</td>
-                    <td>Monatsblitz 6 von 7</td>
-                  </tr>
-                  <tr>
-                    <td>Fr, 10.10</td>
-                    <td>1. Mannschaft</td>
-                    <td>Vorbereitungsabend</td>
-                  </tr>
-                  <tr>
-                    <td>So, 12.10</td>
-                    <td>1. Mannschaft</td>
-                    <td>Schwabenliga 1 Spieltag 1</td>
-                  </tr>
-                  <tr>
-                    <td>Fr, 17.10</td>
-                    <td>Vereinsturnier</td>
-                    <td>Gruppen A+B Runde 2/5</td>
-                  </tr>
-                  <tr>
-                    <td>Fr, 24.10</td>
-                    <td>1. Mannschaft</td>
-                    <td>Vorbereitungsabend</td>
-                  </tr>
-                  <tr>
-                    <td>So, 26.10</td>
-                    <td>1. Mannschaft</td>
-                    <td>Schwabenliga 1 Spieltag 2</td>
-                  </tr>
-                  <tr>
-                    <td>Fr, 31.10</td>
-                    <td>Vereinsabend</td>
-                    <td>(Halloween)</td>
-                  </tr>
-                  <tr>
-                    <td>Fr, 07.11</td>
-                    <td>Vereinsturnier</td>
-                    <td>Gruppen A+B Runde 3/5</td>
-                  </tr>
-                  <tr>
-                    <td>Fr, 14.11</td>
-                    <td>1. Mannschaft</td>
-                    <td>Vorbereitungsabend</td>
-                  </tr>
-                  <tr>
-                    <td>So, 16.11</td>
-                    <td>1. Mannschaft</td>
-                    <td>Schwabenliga 1 Spieltag 3</td>
-                  </tr>
-                  <tr>
-                    <td>Fr, 21.11</td>
-                    <td>Blitz</td>
-                    <td>Monatsblitz 7 von 7</td>
-                  </tr>
-                  <tr>
-                    <td>Fr, 28.11</td>
-                    <td>Vereinsturnier</td>
-                    <td>Gruppen A+B Runde 4/5</td>
-                  </tr>
-                  <tr>
-                    <td>Fr, 05.12</td>
-                    <td>1. Mannschaft</td>
-                    <td>Vorbereitungsabend</td>
-                  </tr>
-                  <tr>
-                    <td>So, 07.12</td>
-                    <td>1. Mannschaft</td>
-                    <td>Schwabenliga 1 Spieltag 4</td>
-                  </tr>
-                  <tr>
-                    <td>Fr, 12.12</td>
-                    <td>Vereinsturnier</td>
-                    <td>Gruppen A+B Runde 5/5</td>
-                  </tr>
-                  <tr>
-                    <td>Fr, 19.12</td>
-                    <td>Blitz</td>
-                    <td>Jahresblitz</td>
-                  </tr>
-                </tbody>
-              </table> -->
               <div id="termineContainer"></div>
             </div>
           </div>
@@ -571,11 +313,113 @@
 
             <a href="./impressum/index.html">Impressum</a><br /><br />
             <a href="./datenschutz/index.html">Datenschutzerklärung</a>
+            <!-- Кнопка для повторного открытия настроек (можно в футере) -->
+            <button
+              id="cookie-preferences"
+              class="cookie-preferences"
+              type="button"
+              aria-label="Cookie-Einstellungen"
+            >
+              Cookie-Einstellungen
+            </button>
           </div>
         </div>
       </div>
     </div>
+
+    <!-- Cookie Banner -->
+    <div
+      id="cookie-banner"
+      class="cookie-banner"
+      role="dialog"
+      aria-live="polite"
+      aria-modal="true"
+      aria-labelledby="cookie-title"
+      hidden
+    >
+      <div class="cookie-banner__content">
+        <h2 id="cookie-title">Cookies & Datenschutz</h2>
+        <p>
+          Wir verwenden <strong>notwendige</strong> Cookies für den Betrieb der
+          Website und – mit Ihrer Einwilligung – Cookies für
+          <em>Analyse</em> und <em>Marketing</em>. Details finden Sie in unserer
+          <a
+            href="./datenschutz/index.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Datenschutzerklärung</a
+          >.
+        </p>
+
+        <fieldset class="cookie-cats" aria-label="Kategorien">
+          <label
+            ><input type="checkbox" checked disabled /> Notwendig (immer
+            aktiv)</label
+          >
+          <label
+            ><input type="checkbox" id="consent-analytics" /> Analyse</label
+          >
+          <label
+            ><input type="checkbox" id="consent-marketing" /> Marketing</label
+          >
+        </fieldset>
+
+        <div class="cookie-actions">
+          <button id="cookie-accept-all" class="btn btn--primary">
+            Alle akzeptieren
+          </button>
+          <button id="cookie-accept-necessary" class="btn">
+            Nur notwendige
+          </button>
+          <button id="cookie-open-settings" class="btn btn--ghost">
+            Einstellungen
+          </button>
+        </div>
+
+        <div id="cookie-settings" class="cookie-settings" hidden>
+          <p>
+            Wählen Sie die gewünschten Kategorien und klicken Sie auf
+            „Speichern“.
+          </p>
+          <div class="cookie-actions">
+            <button id="cookie-save" class="btn btn--primary">Speichern</button>
+            <button id="cookie-cancel" class="btn">Abbrechen</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Button zum erneuten Öffnen der Einstellungen (z. B. im Footer) -->
+    <!-- <button
+      id="cookie-preferences"
+      class="cookie-preferences"
+      type="button"
+      aria-label="Cookie-Einstellungen"
+    >
+      Cookie-Einstellungen
+    </button> -->
+
+    <!-- Cookie Banner -->
+
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <!-- <script src="cookie.js"></script> -->
     <script src="script.js"></script>
+    <script src="cookie.js" defer></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SportsOrganization",
+        "name": "Schachklub Mering 1932 e.V.",
+        "url": "https://sk-mering.de/",
+        "logo": "https://sk-mering.de/images/logo.png",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Klostergasse 2",
+          "postalCode": "86415",
+          "addressLocality": "Mering",
+          "addressCountry": "DE"
+        }
+      }
+    </script>
   </body>
 </html>
