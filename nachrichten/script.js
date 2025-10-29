@@ -259,8 +259,8 @@ function stripHtml(html) {
 }
 
 function formatDate(isoString) {
-  let date = new Date(isoString);
-  return date.toLocaleDateString("ru-RU");
+  const d = new Date(isoString);
+  return d.toLocaleDateString("de-DE");
 }
 
 function convertGoogleDriveLink(link) {

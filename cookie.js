@@ -59,13 +59,37 @@
   }
 
   function showBanner() {
-    $banner.hidden = false;
-    $settings.hidden = true;
-    if ($analytics) $analytics.checked = false;
-    if ($marketing) $marketing.checked = false;
+    const banner = document.getElementById("cookie-banner");
+    const settings = document.getElementById("cookie-settings");
+    if (banner) banner.hidden = false;
+    if (settings) settings.hidden = true;
+
+    // убрать предзаполненные галочки (если нужно)
+    const analytics = document.getElementById("consent-analytics");
+    const marketing = document.getElementById("consent-marketing");
+    if (analytics) analytics.checked = false;
+    if (marketing) marketing.checked = false;
+
+    // ВАЖНО: залочить скролл фона
+    document.documentElement.classList.add("no-scroll");
+    document.body.classList.add("no-scroll");
+
+    // Фокус внутрь модалки (улучшение доступности)
+    queueMicrotask(() => {
+      const firstBtn =
+        document.getElementById("cookie-accept-all") ||
+        document.querySelector("#cookie-banner button");
+      firstBtn?.focus();
+    });
   }
+
   function hideBanner() {
-    $banner.hidden = true;
+    const banner = document.getElementById("cookie-banner");
+    if (banner) banner.hidden = true;
+
+    // вернуть прокрутку
+    document.documentElement.classList.remove("no-scroll");
+    document.body.classList.remove("no-scroll");
   }
 
   function applyConsent() {
