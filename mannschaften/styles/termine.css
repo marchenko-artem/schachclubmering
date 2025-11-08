@@ -104,24 +104,21 @@ button:hover {
   padding: 0.2rem 0.5rem;
 }
 
-th,
-td {
+.responsive-table table:not(.cards-on-mobile) th,
+.responsive-table table:not(.cards-on-mobile) td {
   border: 1px solid #ddd;
   padding: 8px;
-  /* text-align: left; */
 }
 
-th {
-  background-color: #007bff;
-  /* color: white; */
+.responsive-table table:not(.cards-on-mobile) th {
+  background-color: #007bff; /* если не нужно — убери */
   font-weight: bold;
 }
 
-tr:nth-child(even) {
+.responsive-table table:not(.cards-on-mobile) tr:nth-child(even) {
   background-color: #f2f2f2;
 }
-
-tr:hover {
+.responsive-table table:not(.cards-on-mobile) tr:hover {
   background-color: #ddd;
 }
 
@@ -161,41 +158,108 @@ tr:hover {
 }
 /*  */
 
-@media (max-width: 768px) {
-  .responsive-table {
-    margin: 0 5px 0 5px;
-  }
-
-  .responsive-table table,
-  .responsive-table thead,
-  .responsive-table tbody,
-  .responsive-table th,
-  .responsive-table td,
-  .responsive-table tr {
+@media (max-width: 1030px) {
+  .cards-on-mobile,
+  .cards-on-mobile tbody,
+  .cards-on-mobile tr,
+  .cards-on-mobile td,
+  .cards-on-mobile th {
     display: block;
     width: 100%;
   }
 
-  .responsive-table thead tr {
+  .cards-on-mobile tbody tr:first-child {
+    display: none;
+  } /* шапку скрываем */
+
+  .cards-on-mobile tr {
+    background: inherit;
+    border: 1px solid rgba(148, 163, 184, 0.25);
+    border-radius: 12px;
+    margin: 12px 0;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  /* Заголовок карточки */
+  .cards-on-mobile th {
+    display: block;
+    background: #817e7e;
+    color: white;
+    padding: 8px 12px;
+    font-weight: 700;
+    text-align: center; /* ← центрируем текст */
+  }
+  .cards-on-mobile th a {
+    margin: 0 4px;
+
+    color: #0066cc;
+    text-decoration: underline;
+    font-weight: 600;
+    transition: color 0.2s ease;
+  }
+  .cards-on-mobile td {
+    padding: 6px 12px;
+  }
+
+  .cards-on-mobile td:nth-child(2)::before {
+    content: "1. Mannschaft";
+    color: #0066cc;
+    font-weight: 600;
+  }
+  .cards-on-mobile td:nth-child(3)::before {
+    content: "2. Mannschaft";
+    color: #0066cc;
+    font-weight: 600;
+  }
+  .cards-on-mobile td:nth-child(4)::before {
+    content: "3. Mannschaft";
+    color: #7a7a7a;
+    font-weight: 600;
+  }
+  .cards-on-mobile td:nth-child(5)::before {
+    content: "4. Mannschaft";
+    color: #7a7a7a;
+    font-weight: 600;
+  }
+  .cards-on-mobile td:nth-child(6)::before {
+    content: "Mannschaftspokal";
+    color: #7a7a7a;
+    font-weight: 600;
+  }
+  .cards-on-mobile td:nth-child(7)::before {
+    content: "Schnellschach/Blitz";
+    color: #7a7a7a;
+    font-weight: 600;
+  }
+
+  /* 3) Скрыть пустые ячейки (если там пусто) */
+  .cards-on-mobile td:empty {
+    display: none;
+  }
+  .cards-on-mobile td > div:empty {
+    display: none;
+  }
+  /* если в HTML стоят &nbsp;, лучше убрать их; иначе можно попробовать :has() */
+  .cards-on-mobile td:has(> div:only-child:empty) {
     display: none;
   }
 
-  .responsive-table td {
-    position: relative;
-    padding-left: 10%;
-    text-align: left;
-    border: none;
-    border-bottom: 1px solid #eee;
-    /* font-size: 0.875rem; */
-    padding: 5px;
+  /* 4) Ссылки — спокойные, как текст */
+  .cards-on-mobile a {
+    color: #0066cc; /* классический синий для ссылок */
+    text-decoration: underline;
+    font-weight: 600;
+    transition: color 0.2s ease;
   }
+}
 
-  .responsive-table td::before {
-    content: attr(data-label);
-    position: absolute;
-    left: 16px;
-    top: 16px;
-    font-weight: bold;
-    color: #888;
+/* Очень узкие экраны: лейбл над значением */
+@media (max-width: 420px) {
+  .cards-on-mobile td {
+    grid-template-columns: 1fr;
+  }
+  .cards-on-mobile td::before {
+    margin-bottom: 4px;
   }
 }

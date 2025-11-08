@@ -6,7 +6,6 @@ document.addEventListener("DOMContentLoaded", function () {
     navList.classList.toggle("active");
   });
 
-  // Анимация появления секций при прокрутке
   const sections = document.querySelectorAll(".section");
 
   const revealSections = () => {
@@ -19,5 +18,5 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 
   window.addEventListener("scroll", revealSections);
-  revealSections(); // Проверка при загрузке страницы
+  revealSections();
 });

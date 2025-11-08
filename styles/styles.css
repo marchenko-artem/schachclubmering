@@ -343,9 +343,9 @@ h2 {
 }
 
 .flex_item {
-  flex: 1; /* Равномерное распределение */
-  max-width: 50%; /* Чтобы точно не выходило за границы */
-  text-align: center; /* Если нужен центрированный текст */
+  flex: 1;
+  max-width: 50%;
+  text-align: center;
 }
 
 .foto {
@@ -387,10 +387,6 @@ h2 {
   color: #555;
   margin-bottom: 20px;
 }
-
-/* .carouselwrapper {
-    height: 600px;
-} */
 
 .news-carousel {
   margin: 20px auto;
@@ -483,34 +479,42 @@ h2 {
 
 /* Стили для раздела новостей */
 
+/* Стили для для страницы Datenschutz */
+.datencontainer {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+}
+/* Стили для для страницы Datenschutz */
+
 /* === Cookie Modal Overlay (desktop + mobile) === */
 
 /* фон-затемнение на весь экран */
-#cookie-banner {
+/* #cookie-banner {
   position: fixed;
-  inset: 0; /* top:0 right:0 bottom:0 left:0 */
+  inset: 0; 
   z-index: 9999;
   display: grid;
   place-items: center;
-  background: rgba(2, 6, 23, 0.6); /* #020617 с прозрачностью */
+  background: rgba(2, 6, 23, 0.6); 
   backdrop-filter: saturate(120%) blur(2px);
-}
+} */
 
 /* модальное «окно» */
-#cookie-banner .cookie-banner__content {
+/* #cookie-banner .cookie-banner__content {
   width: min(720px, 92vw);
   max-height: min(80vh, 1000px);
   overflow: auto;
   border-radius: 18px;
-  background: #0b1220; /* тёмный фон сайта */
-  color: #e5e7eb; /* светлый текст */
+  background: #0b1220; 
+  color: #e5e7eb; 
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45),
-    0 0 0 1px rgba(148, 163, 184, 0.15); /* тонкая «рамка» */
+    0 0 0 1px rgba(148, 163, 184, 0.15); 
   padding: 20px 22px;
-}
+} */
 
 /* заголовок и текст */
-#cookie-banner h2 {
+/* #cookie-banner h2 {
   margin: 0 0 8px;
   font-size: clamp(18px, 2.2vw, 22px);
   color: #ffffff;
@@ -523,10 +527,10 @@ h2 {
 #cookie-banner a {
   color: #93c5fd;
   text-decoration: underline;
-}
+} */
 
 /* чекбоксы-категории */
-.cookie-cats {
+/* .cookie-cats {
   display: grid;
   gap: 10px;
   margin: 12px 0 6px;
@@ -539,10 +543,10 @@ h2 {
   border: 1px solid #334155;
   padding: 10px 12px;
   border-radius: 10px;
-}
+} */
 
 /* кнопки */
-.cookie-actions {
+/* .cookie-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
@@ -564,7 +568,7 @@ h2 {
 }
 
 .btn--primary {
-  background: #1d4ed8; /* акцент */
+  background: #1d4ed8;
   color: #fff;
 }
 .btn--primary:hover {
@@ -575,19 +579,19 @@ h2 {
   background: transparent;
   color: #e5e7eb;
   border-color: #475569;
-}
+} */
 
 /* блок «Настройки» внутри модалки */
-.cookie-settings {
+/* .cookie-settings {
   margin-top: 10px;
   padding: 12px;
   background: #0f172a;
   border: 1px solid #334155;
   border-radius: 10px;
-}
+} */
 
 /* маленькая кнопка для повторного открытия настроек */
-.cookie-preferences {
+/* .cookie-preferences {
   position: fixed;
   right: 12px;
   bottom: 12px;
@@ -598,10 +602,10 @@ h2 {
   padding: 0.5rem 0.75rem;
   border-radius: 0.6rem;
   font-size: 0.9rem;
-}
+} */
 
 /* мобильные «улучшайзеры» */
-@media (max-width: 520px) {
+/* @media (max-width: 520px) {
   #cookie-banner .cookie-banner__content {
     width: 94vw;
     padding: 16px;
@@ -614,33 +618,33 @@ h2 {
     width: 100%;
     text-align: center;
   }
-}
+} */
 
 /* блокируем прокрутку подложки, когда модалка открыта */
-html.no-scroll,
+/* html.no-scroll,
 body.no-scroll {
   overflow: hidden !important;
 }
 
 #cookie-preferences {
-  all: unset; /* сбросить базовые стили кнопки */
+  all: unset; 
   cursor: pointer;
-  color: #93c5fd; /* тот же цвет, что у ссылок на Datenschutz/Impressum */
+  color: #93c5fd; 
   font-size: 0.95rem;
   text-decoration: underline;
   transition: color 0.2s ease;
-  margin-left: 0.5rem; /* немного отступа, если рядом с другими ссылками */
+  margin-left: 0.5rem; 
 }
 
 #cookie-preferences:hover {
-  color: #60a5fa; /* чуть ярче при наведении */
+  color: #60a5fa; 
 }
 
 #cookie-preferences:focus {
   outline: none;
   text-decoration: underline;
   color: #bfdbfe;
-}
+} */
 
 @media (max-width: 768px) {
   #about::before {
@@ -742,6 +746,10 @@ body.no-scroll {
     vertical-align: middle;
     font-size: 1.2rem;
     width: 80%;
+    margin: 0 auto;
+  }
+  .datencontainer {
+    width: 90%;
     margin: 0 auto;
   }
 }

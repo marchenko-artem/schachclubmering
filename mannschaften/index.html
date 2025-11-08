@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SchachKlub Mering 1932 e.V.</title>
-    <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="stylesheet" href="/styles/styles.css" />
     <link rel="stylesheet" href="styles/modal.css" />
     <link rel="stylesheet" href="styles/termine.css" />
 
@@ -13,13 +13,13 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
 
-    <link rel="icon" href="images/verein.ico" />
+    <link rel="icon" href="/images/verein.ico" />
   </head>
   <body>
     <div class="container">
       <header>
         <div class="logo-container">
-          <img src="images/logo.png" alt="Schachklub Logo" class="logo" />
+          <img src="/images/logo.png" alt="Schachklub Logo" class="logo" />
           <h1>Schachklub Mering</h1>
         </div>
 
@@ -27,17 +27,11 @@
         <nav>
           <ul class="nav-list">
             <li><a href="../index.html">Homepage</a></li>
-            <li><a href="../verein/index.html">Verein</a></li>
-            <li><a href="../turniere/index.html">Turniere</a></li>
-            <!-- <li><a href="#">Mannschaften</a></li> -->
-            <!-- <li><a href="/geschichte">Geschichte</a></li> -->
-            <!-- <li><a href="#partners">Partner</a></li> -->
+            <li><a href="../verein/">Verein</a></li>
+            <li><a href="../turniere/">Turniere</a></li>
           </ul>
         </nav>
       </header>
-      <!--     
-    <i class="fa-solid fa-chess"></i> <!-- Иконка шахмат -
-    <i class="fa-brands fa-facebook"></i> Иконка Facebook -->
 
       <section id="terminkalender" class="section bggr">
         <div class="content">
@@ -45,7 +39,7 @@
 
           <div class="responsive-table">
             <div class="overflow-x-auto">
-              <table>
+              <table class="cards-on-mobile">
                 <tbody>
                   <tr>
                     <th height="22"><div></div></th>
@@ -66,33 +60,60 @@
                   </tr>
                   <tr>
                     <th>
-                      2024/25<br />
-                      <a
-                        href="https://www.sk-mering.de/mannschaften/spielplan.htm"
-                        >Spielplan</a
-                      ><br />
-                      <a
-                        href="https://www.sk-mering.de/mannschaften/aufstellung.htm"
-                        >Aufstellung</a
-                      >
+                      2025/26<br />
+                      <a href="spielplan.htm">Spielplan</a><br />
+                      <a href="aufstellung.html">Aufstellung</a>
                     </th>
                     <td>
                       <div>
-                        <a
-                          href="https://www.sk-mering.de/mannschaften/2024_25/m1.htm"
-                          target="_self"
+                        <a href="2025_26/m1.html" target="_self"
                           >Schwabenliga 1</a
                         ><br />
-                        Platz 7/8 <br />
+
                         MF: Norbert Krug <br />
                       </div>
                     </td>
                     <td>
                       <div>
-                        <a
-                          href="https://www.sk-mering.de/mannschaften/2024_25/m2.htm"
-                          target="_self"
-                          >Kreisliga 1 </a
+                        <a href="2025_26/m2.html" target="_self">Kreisliga 2 </a
+                        ><br />
+
+                        MF: Klaus Jovy
+                      </div>
+                    </td>
+                    <td>
+                      <div>
+                        <a href="2025_26/m3.html" target="_self"
+                          >Kreisklasse B</a
+                        ><br />
+                        MF: Markus Mühlnickel<br />
+                      </div>
+                    </td>
+                    <td>
+                      <div>
+                        <a href="2025_26/m4.html" target="_self"
+                          >Kreisklasse B</a
+                        ><br />
+                        MF: Lukas Didier<br />
+                      </div>
+                    </td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <th>2024/25<br /></th>
+                    <td>
+                      <div>
+                        <a href="2024_25/m1.html" target="_self"
+                          >Schwabenliga 1</a
+                        ><br />
+                        Platz 7/8<br />
+                        MF: Norbert Krug <br />
+                      </div>
+                    </td>
+                    <td>
+                      <div>
+                        <a href="2024_25/m2.html" target="_self">Kreisliga 1 </a
                         ><br />
                         Platz 7/7<br />
                         MF: Klaus Jovy
@@ -100,11 +121,9 @@
                     </td>
                     <td>
                       <div>
-                        <a
-                          href="https://www.sk-mering.de/mannschaften/2024_25/m3.htm"
-                          target="_self"
-                          >Kreisliga 3</a
+                        <a href="2024_25/m3.html" target="_self">Kreisliga 3</a
                         ><br />
+                        Platz 7/9<br />
                         MF: Johann MZL /<br />
                         Bernhard Widl
                       </div>
@@ -117,9 +136,7 @@
                     <th>2023/24<br /></th>
                     <td>
                       <div>
-                        <a
-                          href="https://www.sk-mering.de/mannschaften/2023_24/m1.htm"
-                          target="_self"
+                        <a href="2023_24/m1.html" target="_self"
                           >Schwabenliga I</a
                         ><br />
 
@@ -129,27 +146,18 @@
                     </td>
                     <td>
                       <div>
-                        <a
-                          href="https://www.sk-mering.de/mannschaften/2023_24/m2.htm"
-                          target="_self"
+                        <a href="2023_24/m2.html" target="_self"
                           >Kreisliga 1 <br />
                         </a>
 
                         Platz 4/7<br />
                         MF: Stefan Stoll
-                        <a
-                          href="https://www.sk-mering.de/mannschaften/2022_23/m2.htm"
-                          target="_self"
-                          ><br />
-                        </a>
+                        <a href="2022_23/m2.html" target="_self"><br /> </a>
                       </div>
                     </td>
                     <td>
                       <div>
-                        <a
-                          href="https://www.sk-mering.de/mannschaften/2023_24/m3.htm"
-                          target="_self"
-                          >Kreisliga 3</a
+                        <a href="2023_24/m3.html" target="_self">Kreisliga 3</a
                         ><br />
                         Platz 1/10 <br />
                         MF: Johann MZL
@@ -174,9 +182,7 @@
                     </th>
                     <td>
                       <div>
-                        <a
-                          href="https://www.sk-mering.de/mannschaften/2022_23/m1.htm"
-                          target="_self"
+                        <a href="2022_23/m1.html" target="_self"
                           >Schwabenliga I</a
                         ><br />
                         Platz 2/8<br />
@@ -185,10 +191,7 @@
                     </td>
                     <td>
                       <div>
-                        <a
-                          href="https://www.sk-mering.de/mannschaften/2022_23/m2.htm"
-                          target="_self"
-                          >Kreisliga 2 </a
+                        <a href="2022_23/m2.html" target="_self">Kreisliga 2 </a
                         ><br />
                         Platz 2/8<br />
                         MF: Klaus Jovy <br />
@@ -196,10 +199,7 @@
                     </td>
                     <td>
                       <div>
-                        <a
-                          href="https://www.sk-mering.de/mannschaften/2022_23/m3.htm"
-                          target="_self"
-                          >Kreisliga 3</a
+                        <a href="2022_23/m3.html" target="_self">Kreisliga 3</a
                         ><br />
                         Platz 8/8<br />
                         MF: Adrian Dongoroz<br />
@@ -221,9 +221,7 @@
                     </th>
                     <td>
                       <div>
-                        <a
-                          href="https://www.sk-mering.de/mannschaften/2021_22/m1.htm"
-                          target="_self"
+                        <a href="2021_22/m1.html" target="_self"
                           >Schwabenliga I</a
                         ><br />
                         Platz 2/8<br />
@@ -238,9 +236,7 @@
                     </td>
                     <td>
                       <div>
-                        <a
-                          href="https://www.sk-mering.de/mannschaften/2021_22/m3.htm"
-                          target="_self"
+                        <a href="2021_22/m3.html" target="_self"
                           >Kreisklasse A</a
                         ><br />
                         Platz 5/5<br />
@@ -257,9 +253,7 @@
                     <th><a href="spielplan.htm"> </a>2019/21<br /></th>
                     <td>
                       <div>
-                        <a
-                          href="https://www.sk-mering.de/mannschaften/2019_20/m1.htm"
-                          target="_self"
+                        <a href="2019_20/m1.htm" target="_self"
                           >Schwabenliga I</a
                         ><br />
                         Platz 6/9<br />
@@ -268,20 +262,14 @@
                     </td>
                     <td>
                       <div>
-                        <a
-                          href="https://www.sk-mering.de/mannschaften/2019_20/m2.htm"
-                          target="_self"
-                          >Kreisliga 2 </a
+                        <a href="2019_20/m2.htm" target="_self">Kreisliga 2 </a
                         ><br />
                         abgebrochen<br />
                       </div>
                     </td>
                     <td>
                       <div>
-                        <a
-                          href="https://www.sk-mering.de/mannschaften/2019_20/m3.htm"
-                          target="_self"
-                          >Kreisliga 3 </a
+                        <a href="2019_20/m3.htm" target="_self">Kreisliga 3 </a
                         ><br />
                         abgebrochen<br />
                       </div>
@@ -296,9 +284,7 @@
                     <th>2018/19<br /></th>
                     <td>
                       <div>
-                        <a
-                          href="https://www.sk-mering.de/mannschaften/2018_19/m1.htm"
-                          target="_self"
+                        <a href="2018_19/m1.htm" target="_self"
                           >Schwabenliga I</a
                         ><br />
                         Platz 3/8<br />
@@ -307,10 +293,7 @@
                     </td>
                     <td>
                       <div>
-                        <a
-                          href="https://www.sk-mering.de/mannschaften/2018_19/m2.htm"
-                          target="_self"
-                          >Kreisliga 1</a
+                        <a href="2018_19/m2.htm" target="_self">Kreisliga 1</a
                         ><br />
                         Platz 7/8<br />
                         MF: Helmut Strobl <br />
@@ -318,10 +301,7 @@
                     </td>
                     <td>
                       <div>
-                        <a
-                          href="https://www.sk-mering.de/mannschaften/2018_19/m3.htm"
-                          target="_self"
-                          >Kreisliga 3 </a
+                        <a href="2018_19/m3.htm" target="_self">Kreisliga 3 </a
                         ><br />
                         Platz 4/8<br />
                         MF: Bernhard Widl <br />
@@ -334,16 +314,12 @@
                     <td>
                       <div>
                         <p>
-                          Bay. SSMM 18<a
-                            href="https://www.sk-mering.de/mannschaften/2013_14/rapid.htm"
-                            target="_self"
+                          Bay. SSMM 18<a href="2013_14/rapid.htm" target="_self"
                             ><br /> </a
                           >LL Süd Platz 3/7<br />
                           Schw. BMM 19<br />
                           Platz 5/12<br />
-                          Bay. BMM 19<a
-                            href="https://www.sk-mering.de/mannschaften/2016_17/rapid.htm"
-                            target="_self"
+                          Bay. BMM 19<a href="2016_17/rapid.htm" target="_self"
                             ><br /> </a
                           >Platz 18/22
                         </p>
@@ -354,10 +330,7 @@
                     <th>2017/18<br /></th>
                     <td>
                       <div>
-                        <a
-                          href="https://www.sk-mering.de/mannschaften/2017_18/m1.htm"
-                          target="_self"
-                          >RL Südwest</a
+                        <a href="2017_18/m1.htm" target="_self">RL Südwest</a
                         ><br />
                         Platz 9/10<br />
                         MF: Norbert Krug <br />
@@ -365,10 +338,7 @@
                     </td>
                     <td>
                       <div>
-                        <a
-                          href="https://www.sk-mering.de/mannschaften/2017_18/m2.htm"
-                          target="_self"
-                          >Kreisliga 1</a
+                        <a href="2017_18/m2.htm" target="_self">Kreisliga 1</a
                         ><br />
                         Platz 2/9<br />
                         MF: Ernst Michael<br />
@@ -377,11 +347,7 @@
                     </td>
                     <td>
                       <div>
-                        <a
-                          href="https://www.sk-mering.de/mannschaften/2017_18/m3.htm"
-                          target="_self"
-                          >Kreisliga 2
-                        </a>
+                        <a href="2017_18/m3.htm" target="_self">Kreisliga 2 </a>
                         <br />
                         Platz 8/8<br />
                         MF: Bernhard Widl
@@ -389,9 +355,7 @@
                     </td>
                     <td>
                       <div>
-                        <a
-                          href="https://www.sk-mering.de/mannschaften/2017_18/m4.htm"
-                          target="_self"
+                        <a href="2017_18/m4.htm" target="_self"
                           >Kreisklasse B
                         </a>
                         <br />
@@ -404,14 +368,10 @@
                     </td>
                     <td>
                       <div>
-                        Bay. SSMM 18<a
-                          href="https://www.sk-mering.de/mannschaften/2013_14/rapid.htm"
-                          target="_self"
+                        Bay. SSMM 18<a href="2013_14/rapid.htm" target="_self"
                           ><br /> </a
                         >LL Süd Platz 3/6<br />
-                        Bay. BMM 18<a
-                          href="https://www.sk-mering.de/mannschaften/2016_17/rapid.htm"
-                          target="_self"
+                        Bay. BMM 18<a href="2016_17/rapid.htm" target="_self"
                           ><br /> </a
                         >Platz 10/20
                       </div>
@@ -424,10 +384,7 @@
                     </th>
                     <td>
                       <div>
-                        <a
-                          href="https://www.sk-mering.de/mannschaften/2016_17/m1.htm"
-                          target="_self"
-                          >RL Südwest</a
+                        <a href="2016_17/m1.htm" target="_self">RL Südwest</a
                         ><br />
                         Platz 6/10<br />
                         MF: Jens Andersen<br />
@@ -435,9 +392,7 @@
                     </td>
                     <td>
                       <div>
-                        <a
-                          href="https://www.sk-mering.de/mannschaften/2016_17/m2.htm"
-                          target="_self"
+                        <a href="2016_17/m2.htm" target="_self"
                           >Schwabenliga 2 </a
                         ><br />
                         Platz 8/8<br />
@@ -447,11 +402,7 @@
                     </td>
                     <td>
                       <div>
-                        <a
-                          href="https://www.sk-mering.de/mannschaften/2016_17/m3.htm"
-                          target="_self"
-                          >Kreisliga 2
-                        </a>
+                        <a href="m3.htm" target="_self">Kreisliga 2 </a>
                         <br />
                         Platz 7/8<br />
                         MF: Bernhard Widl
@@ -492,9 +443,7 @@
                     <th>2015/16<br /></th>
                     <td>
                       <div>
-                        <a
-                          href="https://www.sk-mering.de/mannschaften/2015_16/m1.htm"
-                          target="_self"
+                        <a href="2015_16/m1.htm" target="_self"
                           >Schwabenliga 1 </a
                         ><br />
                         Platz 1/8<br />
@@ -503,10 +452,7 @@
                     </td>
                     <td>
                       <div>
-                        <a
-                          href="https://www.sk-mering.de/mannschaften/2015_16/m2.htm"
-                          target="_self"
-                          >Kreisliga 1</a
+                        <a href="2015_16/m2.htm" target="_self">Kreisliga 1</a
                         ><br />
                         Platz 2/8<br />
                         MF: Helmut Strobl
@@ -514,11 +460,7 @@
                     </td>
                     <td>
                       <div>
-                        <a
-                          href="https://www.sk-mering.de/mannschaften/2015_16/m3.htm"
-                          target="_self"
-                          >Kreisliga 3</a
-                        >
+                        <a href="2015_16/m3.htm" target="_self">Kreisliga 3</a>
                         <br />
                         Platz 1/10<br />
                         MF: Bernhard Widl
@@ -527,9 +469,7 @@
                     <td>&nbsp;</td>
                     <td>
                       <div>
-                        <a
-                          href="https://www.sk-mering.de/mannschaften/2015_16/mpokal.html"
-                          target="_self"
+                        <a href="2015_16/mpokal.html" target="_self"
                           >Schwäb. Ebene</a
                         >
                         <a
@@ -560,10 +500,7 @@
                     <th>2014/15<br /></th>
                     <td>
                       <div>
-                        <a
-                          href="https://www.sk-mering.de/mannschaften/2014_15/m1.htm"
-                          target="_self"
-                          >RL Südwest</a
+                        <a href="2014_15/m1.htm" target="_self">RL Südwest</a
                         ><br />
                         Platz 9/10<br />
                         MF: Jens Andersen<br />
@@ -571,10 +508,7 @@
                     </td>
                     <td>
                       <div>
-                        <a
-                          href="https://www.sk-mering.de/mannschaften/2014_15/m2.htm"
-                          target="_self"
-                          >Kreisliga 1</a
+                        <a href="2014_15/m2.htm" target="_self">Kreisliga 1</a
                         ><br />
                         Platz 4/9<br />
                         MF: Helmut Strobl
@@ -582,11 +516,7 @@
                     </td>
                     <td>
                       <div>
-                        <a
-                          href="https://www.sk-mering.de/mannschaften/2014_15/m3.htm"
-                          target="_self"
-                          >Kreisliga 3</a
-                        >
+                        <a href="2014_15/m3.htm" target="_self">Kreisliga 3</a>
                         <br />
                         Platz 9/10<br />
                         MF: Bernhard Widl
@@ -595,24 +525,16 @@
                     <td>&nbsp;</td>
                     <td>
                       <div>
-                        <a
-                          href="https://www.sk-mering.de/mannschaften/2014_15/mpokal.html"
-                          target="_self"
+                        <a href="2014_15/mpokal.html" target="_self"
                           >Schwäb. Ebene</a
                         >
-                        <a
-                          href="https://www.sk-mering.de/mannschaften/2011_12/mpokal.html"
-                          target="_self"
-                        ></a
-                        ><br />
+                        <a href="2011_12/mpokal.html" target="_self"></a><br />
                         Halbfinale
                       </div>
                     </td>
                     <td>
                       <div>
-                        <a
-                          href="https://www.sk-mering.de/mannschaften/2014_15/rapid.htm"
-                          target="_self"
+                        <a href="2014_15/rapid.htm" target="_self"
                           >Bay. SSMM 15<br /> </a
                         >Oberliga Platz 2/20<br />
 
@@ -633,10 +555,7 @@
                     <th>2013/14<br /></th>
                     <td>
                       <div>
-                        <a
-                          href="https://www.sk-mering.de/mannschaften/2013_14/m1.htm"
-                          target="_self"
-                          >RL Südwest</a
+                        <a href="2013_14/m1.htm" target="_self">RL Südwest</a
                         ><br />
                         Platz 5/10<br />
                         MF: Jens Andersen <br />
@@ -644,10 +563,7 @@
                     </td>
                     <td>
                       <div>
-                        <a
-                          href="https://www.sk-mering.de/mannschaften/2013_14/m2.htm"
-                          target="_self"
-                          >Kreisliga 2</a
+                        <a href="2013_14/m2.htm" target="_self">Kreisliga 2</a
                         ><br />
                         Platz 2/8<br />
                         MF: Helmut Strobl
@@ -655,9 +571,7 @@
                     </td>
                     <td>
                       <div>
-                        <a
-                          href="https://www.sk-mering.de/mannschaften/2013_14/m3.htm"
-                          target="_self"
+                        <a href="2013_14/m3.htm" target="_self"
                           >Kreisklasse B</a
                         >
                         <br />
@@ -1105,15 +1019,6 @@
               </button> -->
             </p>
           </div>
-        </div>
-
-        <div class="footer__bottom">
-          <img
-            src="/images/logo.png"
-            alt="Schachklub Mering Logo"
-            class="footer__logo"
-          />
-          <p>© 1932–2025 Schachklub Mering e.V. — Alle Rechte vorbehalten.</p>
         </div>
       </footer>
     </div>

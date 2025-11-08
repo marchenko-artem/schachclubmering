@@ -14,76 +14,6 @@ body {
   overflow-x: hidden;
 }
 
-h1,
-h2 {
-  color: #222;
-}
-
-h1 {
-  font-size: 2.5em;
-  text-align: center;
-  margin-bottom: 0.5em;
-}
-
-h2 {
-  font-size: 1.6em;
-  margin-top: 1.5em;
-}
-
-a.button {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 10px 20px;
-  background: #222;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 6px;
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 10px;
-}
-
-table th,
-table td {
-  border: 1px solid #ccc;
-  padding: 10px;
-}
-
-table th {
-  background-color: #f2f2f2;
-  text-align: left;
-}
-
-ul {
-  padding-left: 1.2em;
-}
-
-iframe {
-  width: 100%;
-  height: 300px;
-  border: 0;
-  margin-top: 10px;
-  border-radius: 8px;
-}
-
-@media (max-width: 600px) {
-  h1 {
-    font-size: 2em;
-  }
-
-  table,
-  thead,
-  tbody,
-  th,
-  td,
-  tr {
-    font-size: 0.95em;
-  }
-}
-
 .container {
   overflow-x: hidden; /* Полностью убираем горизонтальный скролл */
   max-width: 100vw;
@@ -170,6 +100,9 @@ nav ul li a {
   text-decoration: none;
   color: inherit;
 }
+/* ver. 1.1 */
+
+/* ver. 1.1 */
 
 .club-info {
   background: rgba(255, 255, 255, 0.05);
@@ -332,6 +265,7 @@ nav ul li a {
 
 h2 {
   font-size: 1.8rem;
+  text-align: center;
 }
 
 .coach-container {
@@ -360,7 +294,7 @@ h2 {
 
 .coach-photo {
   width: 100%;
-  height: 400px;
+  height: 700px;
   object-fit: cover;
   background-color: #ddd;
 }
@@ -410,9 +344,9 @@ h2 {
 }
 
 .flex_item {
-  flex: 1; /* Равномерное распределение */
-  max-width: 50%; /* Чтобы точно не выходило за границы */
-  text-align: center; /* Если нужен центрированный текст */
+  flex: 1;
+  max-width: 50%;
+  text-align: center;
 }
 
 .foto {
@@ -454,10 +388,6 @@ h2 {
   color: #555;
   margin-bottom: 20px;
 }
-
-/* .carouselwrapper {
-    height: 600px;
-} */
 
 .news-carousel {
   margin: 20px auto;
@@ -550,24 +480,172 @@ h2 {
 
 /* Стили для раздела новостей */
 
-.footer {
-  background-color: #e2e2e2;
-}
-
-#footer_links {
+/* Стили для для страницы Datenschutz */
+.datencontainer {
   max-width: 800px;
   margin: 0 auto;
-  background-color: #e2e2e2;
-  color: black;
+  text-align: left;
+}
+/* Стили для для страницы Datenschutz */
+
+/* === Cookie Modal Overlay (desktop + mobile) === */
+
+/* фон-затемнение на весь экран */
+/* #cookie-banner {
+  position: fixed;
+  inset: 0; 
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+  background: rgba(2, 6, 23, 0.6); 
+  backdrop-filter: saturate(120%) blur(2px);
+} */
+
+/* модальное «окно» */
+/* #cookie-banner .cookie-banner__content {
+  width: min(720px, 92vw);
+  max-height: min(80vh, 1000px);
+  overflow: auto;
+  border-radius: 18px;
+  background: #0b1220; 
+  color: #e5e7eb; 
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45),
+    0 0 0 1px rgba(148, 163, 184, 0.15); 
+  padding: 20px 22px;
+} */
+
+/* заголовок и текст */
+/* #cookie-banner h2 {
+  margin: 0 0 8px;
+  font-size: clamp(18px, 2.2vw, 22px);
+  color: #ffffff;
+}
+#cookie-banner p {
+  margin: 8px 0 14px;
+  line-height: 1.5;
+  color: #cbd5e1;
+}
+#cookie-banner a {
+  color: #93c5fd;
+  text-decoration: underline;
+} */
+
+/* чекбоксы-категории */
+/* .cookie-cats {
+  display: grid;
+  gap: 10px;
+  margin: 12px 0 6px;
+}
+.cookie-cats label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #0f172a;
+  border: 1px solid #334155;
+  padding: 10px 12px;
+  border-radius: 10px;
+} */
+
+/* кнопки */
+/* .cookie-actions {
   display: flex;
   flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: space-around;
-  white-space: nowrap;
-
-  /* font-family: 'Montserrat', sans-serif; */
-  font-weight: 400;
+  gap: 10px;
+  margin-top: 12px;
 }
+.btn {
+  padding: 0.65rem 1rem;
+  border-radius: 0.8rem;
+  border: 1px solid transparent;
+  background: #e5e7eb;
+  color: #0b1220;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.06s ease, background 0.15s ease,
+    border-color 0.15s ease;
+}
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn--primary {
+  background: #1d4ed8;
+  color: #fff;
+}
+.btn--primary:hover {
+  background: #1e40af;
+}
+
+.btn--ghost {
+  background: transparent;
+  color: #e5e7eb;
+  border-color: #475569;
+} */
+
+/* блок «Настройки» внутри модалки */
+/* .cookie-settings {
+  margin-top: 10px;
+  padding: 12px;
+  background: #0f172a;
+  border: 1px solid #334155;
+  border-radius: 10px;
+} */
+
+/* маленькая кнопка для повторного открытия настроек */
+/* .cookie-preferences {
+  position: fixed;
+  right: 12px;
+  bottom: 12px;
+  z-index: 9998;
+  background: #0b1220;
+  color: #fff;
+  border: 1px solid #334155;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.6rem;
+  font-size: 0.9rem;
+} */
+
+/* мобильные «улучшайзеры» */
+/* @media (max-width: 520px) {
+  #cookie-banner .cookie-banner__content {
+    width: 94vw;
+    padding: 16px;
+    border-radius: 14px;
+  }
+  .cookie-actions {
+    flex-direction: column;
+  }
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+} */
+
+/* блокируем прокрутку подложки, когда модалка открыта */
+/* html.no-scroll,
+body.no-scroll {
+  overflow: hidden !important;
+}
+
+#cookie-preferences {
+  all: unset; 
+  cursor: pointer;
+  color: #93c5fd; 
+  font-size: 0.95rem;
+  text-decoration: underline;
+  transition: color 0.2s ease;
+  margin-left: 0.5rem; 
+}
+
+#cookie-preferences:hover {
+  color: #60a5fa; 
+}
+
+#cookie-preferences:focus {
+  outline: none;
+  text-decoration: underline;
+  color: #bfdbfe;
+} */
 
 @media (max-width: 768px) {
   #about::before {
@@ -630,6 +708,7 @@ h2 {
 
   h2 {
     font-size: 1.4rem;
+    text-align: center;
   }
 
   .news-carousel {
@@ -671,22 +750,109 @@ h2 {
     width: 80%;
     margin: 0 auto;
   }
-
-  #footer_links {
-    flex-direction: column;
-    justify-content: space-around;
-    white-space: nowrap;
-
-    /* font-family: 'Montserrat', sans-serif; */
-    font-weight: 400;
-    padding-bottom: 20px;
-  }
-
-  .footer_col {
+  .datencontainer {
+    width: 90%;
     margin: 0 auto;
   }
+}
 
-  .footer_col h2 {
+@media (prefers-color-scheme: dark) {
+  #about::before {
+    background: url("../images/mobile-image.jpg") no-repeat center center/cover;
+    filter: brightness(1.1); /* Немного осветляет картинку */
+  }
+
+  #about .content {
+    background: rgba(
+      0,
+      0,
+      0,
+      0.6
+    ); /* Чуть темнее, чтобы сохранить читаемость */
+  }
+}
+
+/* === Footer modern === */
+.footer {
+  background: #0b1220;
+  color: #e2e8f0;
+  padding: 20px 20px 20px;
+  border-top: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+.footer__inner {
+  max-width: 900px; /* ограничиваем ширину */
+  margin: 0 auto 20px auto; /* центрируем блок */
+  display: flex;
+  justify-content: center; /* центрируем колонки */
+  gap: 60px; /* расстояние между ними */
+  flex-wrap: wrap; /* перенос на мобильных */
+  text-align: center; /* ключевая правка — теперь текст по центру */
+}
+
+.footer__col {
+  min-width: 180px;
+  flex: 1 1 200px;
+}
+
+.footer__col h3 {
+  font-size: 1.05rem;
+  margin-bottom: 10px;
+  color: #f8fafc;
+  font-weight: 600;
+}
+
+.footer__col p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.footer__col a,
+#cookie-preferences {
+  color: #93c5fd;
+  text-decoration: underline;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font: inherit;
+  transition: color 0.2s ease;
+}
+
+.footer__col a:hover,
+#cookie-preferences:hover {
+  color: #60a5fa;
+}
+
+.footer__bottom {
+  border-top: 1px solid rgba(148, 163, 184, 0.2);
+  padding-top: 20px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #94a3b8;
+}
+
+.footer__logo {
+  width: 60px;
+  height: auto;
+  margin-bottom: 10px;
+  opacity: 0.85;
+}
+
+/* === Mobile layout === */
+@media (max-width: 700px) {
+  .footer__inner {
+    gap: 30px;
+    justify-content: center;
     text-align: center;
+  }
+  .footer__col {
+    flex: 1 1 100%;
+  }
+  .footer__col h3 {
+    font-size: 1rem;
+    margin-bottom: 6px;
+  }
+  .footer__bottom {
+    font-size: 0.85rem;
   }
 }

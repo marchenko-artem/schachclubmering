@@ -1,0 +1,198 @@
+function convertMarkdown(text) {
+  return marked.parse(text);
+}
+
+function stripHtml(html) {
+  let doc = new DOMParser().parseFromString(html, "text/html");
+  return doc.body.textContent || "";
+}
+
+function convertGoogleDriveLink(link) {
+  let match = link.match(/(?:\/d\/|id=)([-\w]{25,})/);
+  return match ? `https://lh3.googleusercontent.com/d/${match[1]}` : link;
+}
+
+function formatDate(isoString) {
+  let date = new Date(isoString);
+  let day = String(date.getDate()).padStart(2, "0");
+  let month = String(date.getMonth() + 1).padStart(2, "0");
+  let year = date.getFullYear();
+  return `${day}.${month}.${year}`;
+}
+
+let currentPage = 1;
+let newsData = [];
+const pageSize = 10;
+
+async function loadNews() {
+  const url =
+    "https://script.google.com/macros/s/AKfycbxQnVhEKok0dzophckOLB8ij4yiVUx-BVxh7Z3JB_EpXiXrFLNlzFEbr9gLStpYimNBrw/exec";
+  try {
+    let response = await fetch(url);
+    newsData = await response.json();
+
+    if (newsData.length === 0) {
+      document.getElementById("news-container").innerHTML =
+        "<p>Es gibt noch keine Neuigkeiten</p>";
+      return;
+    }
+
+    newsData.sort((a, b) => new Date(b.date) - new Date(a.date));
+    displayNews();
+  } catch (error) {
+    console.error("Fehler beim Laden von Nachrichten:", error);
+    document.getElementById("news-container").innerHTML = "<p>Fehler</p>";
+  }
+}
+
+function displayNews() {
+  const container = document.getElementById("news-container");
+  container.innerHTML = "";
+
+  const start = (currentPage - 1) * pageSize;
+  const end = start + pageSize;
+  const pageNews = newsData.slice(start, end);
+
+  pageNews.forEach((news) => {
+    const fullText = marked.parse(news.text || "Kein Text");
+    const plainText = stripHtml(fullText);
+    const shortText =
+      plainText.length > 120 ? plainText.substring(0, 120) + "..." : plainText;
+    const formattedDate = formatDate(news.date);
+
+    let imagesHtml = "";
+    if (news.images && news.images.length > 0) {
+      news.images.forEach((image, index) => {
+        const imageUrl = convertGoogleDriveLink(image);
+        imagesHtml += `<img src="${imageUrl}" class="news-image ${
+          index === 0 ? "active" : ""
+        }" alt="Bild">`;
+      });
+    }
+
+    const newsHtml = `
+            <div class="news-item">
+                <h3>${news.title}</h3>
+                <p class="news-text">
+                   <div class="short-text">${shortText}</div>
+<div class="full-text">${fullText}</div>
+                    <button class="toggle-text">Weiterlesen</button>
+                </p>
+                <small>${formattedDate}</small>
+                <div class="news-carousel">
+                    ${
+                      news.images.length > 1
+                        ? `
+                    <button class="prev">&#10094;</button>
+                    <div class="carousel-images">${imagesHtml}</div>
+                    <button class="next">&#10095;</button>
+                    `
+                        : imagesHtml
+                    }
+                </div>
+            </div>
+        `;
+
+    container.innerHTML += newsHtml;
+  });
+
+  setupToggleText();
+  setupCarousel();
+  updatePaginationButtons();
+}
+
+function setupToggleText() {
+  document.querySelectorAll(".toggle-text").forEach((button) => {
+    button.addEventListener("click", function () {
+      const newsItem = this.closest(".news-item");
+      newsItem.classList.toggle("expanded");
+
+      this.textContent = newsItem.classList.contains("expanded")
+        ? "Ausblenden"
+        : "Weiterlesen";
+    });
+  });
+}
+
+function setupCarousel() {
+  document.querySelectorAll(".news-carousel").forEach((carousel) => {
+    const images = carousel.querySelectorAll(".news-image");
+    const prevButton = carousel.querySelector(".prev");
+    const nextButton = carousel.querySelector(".next");
+
+    if (!images.length || !prevButton || !nextButton) return;
+
+    let currentIndex = 0;
+    function showImage(index) {
+      images.forEach((img, i) => img.classList.toggle("active", i === index));
+    }
+
+    prevButton.addEventListener("click", () => {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      showImage(currentIndex);
+    });
+
+    nextButton.addEventListener("click", () => {
+      currentIndex = (currentIndex + 1) % images.length;
+      showImage(currentIndex);
+    });
+
+    showImage(currentIndex);
+  });
+}
+
+function updatePaginationButtons() {
+  document.getElementById("prevPage").disabled = currentPage === 1;
+  document.getElementById("nextPage").disabled =
+    currentPage * pageSize >= newsData.length;
+}
+
+document.getElementById("prevPage").addEventListener("click", () => {
+  currentPage--;
+  displayNews();
+});
+
+document.getElementById("nextPage").addEventListener("click", () => {
+  currentPage++;
+  displayNews();
+});
+
+function stripHtml(html) {
+  return (
+    new DOMParser().parseFromString(html, "text/html").body.textContent || ""
+  );
+}
+
+function formatDate(isoString) {
+  const d = new Date(isoString);
+  return d.toLocaleDateString("de-DE");
+}
+
+function convertGoogleDriveLink(link) {
+  let match = link.match(/(?:\/d\/|id=)([-\w]{25,})/);
+  return match ? `https://lh3.googleusercontent.com/d/${match[1]}` : link;
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  loadNews();
+  const menuToggle = document.querySelector(".menu-toggle");
+  const navList = document.querySelector(".nav-list");
+
+  menuToggle.addEventListener("click", function () {
+    navList.classList.toggle("active");
+  });
+
+  const sections = document.querySelectorAll(".section");
+
+  const revealSections = () => {
+    sections.forEach((section) => {
+      const sectionTop = section.getBoundingClientRect().top;
+      if (sectionTop < window.innerHeight - 100) {
+        section.classList.add("show");
+      }
+    });
+  };
+
+  window.addEventListener("scroll", revealSections);
+  revealSections();
+});

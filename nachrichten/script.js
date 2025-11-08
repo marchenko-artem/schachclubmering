@@ -2,7 +2,6 @@ function convertMarkdown(text) {
   return marked.parse(text);
 }
 
-// Функция для удаления HTML-тегов
 function stripHtml(html) {
   let doc = new DOMParser().parseFromString(html, "text/html");
   return doc.body.textContent || "";
@@ -21,102 +20,149 @@ function formatDate(isoString) {
   return `${day}.${month}.${year}`;
 }
 
-// function formatDate(isoString) {
-//   const date = new Date(isoString);
-//   return date.toLocaleDateString("de-DE");
-// }
-
-// async function loadNews() {
-// const url = "https://script.google.com/macros/s/AKfycbxQnVhEKok0dzophckOLB8ij4yiVUx-BVxh7Z3JB_EpXiXrFLNlzFEbr9gLStpYimNBrw/exec"; // Твой URL
-// try {
-//     let response = await fetch(url);
-//     let news = await response.json();
-
-//     if (news.length === 0) {
-//         document.getElementById("news-container").innerHTML = "<p>Новостей пока нет.</p>";
-//         return;
-//     }
-
-//     // Сортируем новости по дате
-//     news.sort((a, b) => new Date(b.date) - new Date(a.date));
-
-//     const latestNews = news[0];
-//     // console.log("Последняя новость:", latestNews);
-
-//     // Проверяем, есть ли текст
-//     const textContent = latestNews.text ? latestNews.text : "Нет текста для отображения.";
-//     // console.log("Исходный текст (до обработки Markdown):", textContent);
-//     // console.log("Исходный текст перед обработкой:", textContent);
-//     const fullText = convertMarkdown(textContent);
-//     // console.log("текст (после обработки Markdown):", textContent);
-//     // console.log("Загруженные новости:", news);
-//     const plainText = stripHtml(fullText);fullText
-//     const shortText = plainText.length > 120 ? plainText.substring(0, 120) + "..." : plainText;
-
-//     let imagesHtml = "";
-//     if (latestNews.images && latestNews.images.length > 0) {
-//         latestNews.images.forEach((image, index) => {
-//             const imageUrl = convertGoogleDriveLink(image);
-//             imagesHtml += `<img src="${imageUrl}" class="news-image ${index === 0 ? 'active' : ''}" alt="Изображение новости">`;
-//         });
-//     }
-//     // <div class="full-text" style="display: none;"><div>${fullText}</div></div>
-//     const formattedDate = formatDate(latestNews.date);
-
-//     const newsHtml = `
-//         <div class="news-item">
-//             <h2>${latestNews.title}</h2>
-//             <small>${formattedDate}</small>
-//            <p class="news-text">
-//       <div class="full-text" style="display: none;">${fullText}</div>
-
-//             <span class="short-text">${shortText}</span>
-
-// <button class="toggle-text">Weiterlesen</button>
-// </p>
-
-//             <div class="news-carousel">
-//                 ${latestNews.images.length > 1 ? `
-//                 <button class="prev">&#10094;</button>
-//                 <div class="carousel-images">${imagesHtml}</div>
-//                 <button class="next">&#10095;</button>
-//                 ` : imagesHtml}
-//             </div>
-
-//         </div>
-//     `;
-
-//     document.getElementById("news-container").innerHTML = newsHtml;
-
-//     setupCarousel();
-// } catch (error) {
-//     console.error("Ошибка загрузки новостей:", error);
-// }
-
-// }
-
 let currentPage = 1;
 let newsData = [];
 const pageSize = 10;
 
-async function loadNews() {
-  const url =
-    "https://script.google.com/macros/s/AKfycbxQnVhEKok0dzophckOLB8ij4yiVUx-BVxh7Z3JB_EpXiXrFLNlzFEbr9gLStpYimNBrw/exec";
-  try {
-    let response = await fetch(url);
-    newsData = await response.json();
+// async function loadNews() {
+//   const url =
+//     "https://script.google.com/macros/s/AKfycbxQnVhEKok0dzophckOLB8ij4yiVUx-BVxh7Z3JB_EpXiXrFLNlzFEbr9gLStpYimNBrw/exec";
+//   try {
+//     let response = await fetch(url);
+//     newsData = await response.json();
 
-    if (newsData.length === 0) {
-      document.getElementById("news-container").innerHTML =
-        "<p>Es gibt noch keine Neuigkeiten</p>";
+//     if (newsData.length === 0) {
+//       document.getElementById("news-container").innerHTML =
+//         "<p>Es gibt noch keine Neuigkeiten</p>";
+//       return;
+//     }
+
+//     newsData.sort((a, b) => new Date(b.date) - new Date(a.date));
+//     displayNews();
+//   } catch (error) {
+//     console.error("Fehler beim Laden von Nachrichten:", error);
+//     document.getElementById("news-container").innerHTML = "<p>Fehler</p>";
+//   }
+// }
+
+// ЗАМЕНИ только эту функцию:
+async function loadNews() {
+  const container = document.getElementById("news-container");
+
+  try {
+    const res = await fetch("news.html", { cache: "no-store" });
+    const html = await res.text();
+    const doc = new DOMParser().parseFromString(html, "text/html");
+
+    // Ищем таблицу: сначала #news-table, если нет — первый <table>
+    const table =
+      doc.querySelector("#news-table") || doc.querySelector("table");
+    if (!table) {
+      if (container)
+        container.innerHTML = "<p>Es gibt noch keine Neuigkeiten</p>";
+      newsData = [];
+      updatePaginationButtons?.();
       return;
     }
 
-    newsData.sort((a, b) => new Date(b.date) - new Date(a.date));
+    // Заголовки (thead th, либо первая строка)
+    const headerCells = table.querySelectorAll("thead th").length
+      ? Array.from(table.querySelectorAll("thead th"))
+      : Array.from(
+          table.querySelectorAll("tr:first-child th, tr:first-child td")
+        );
+
+    const headers = headerCells.map((h) => (h.textContent || "").trim());
+    const idxOf = (name) =>
+      headers.findIndex((h) => h.toLowerCase() === name.toLowerCase());
+
+    const idx = {
+      id: idxOf("ID"),
+      title: idxOf("Artikeltitel"),
+      text: idxOf("Text"),
+      date: idxOf("Datum"),
+      images: Array.from({ length: 10 }, (_, i) => idxOf(`Bild${i + 1}`)),
+    };
+
+    // Строки данных
+    let rows = Array.from(table.querySelectorAll("tbody tr"));
+    if (!rows.length) {
+      // если нет <tbody>, берём все строки, кроме первой (с заголовками)
+      rows = Array.from(table.querySelectorAll("tr")).slice(1);
+    }
+
+    newsData = rows
+      .map((tr, i) => {
+        const cells = Array.from(tr.children);
+        const getText = (ix) =>
+          ix >= 0 && cells[ix] ? (cells[ix].textContent || "").trim() : "";
+        const getHTML = (ix) =>
+          ix >= 0 && cells[ix] ? (cells[ix].innerHTML || "").trim() : "";
+
+        const id = getText(idx.id) || `row-${i + 1}`;
+        const title = getText(idx.title);
+        const text = getHTML(idx.text); // разрешаем простой HTML/markdown-текст
+        const rawDate = getText(idx.date);
+        const date = parseDateFlexible(rawDate);
+
+        const images = idx.images
+          .map((ix) => getText(ix))
+          .filter(Boolean)
+          .map(resolveLocalPath);
+
+        return { id, title, text, date, images };
+      })
+      .filter((n) => n.title || n.text);
+
+    if (!newsData.length) {
+      if (container)
+        container.innerHTML = "<p>Es gibt noch keine Neuigkeiten</p>";
+      updatePaginationButtons?.();
+      return;
+    }
+
+    // Сортировка по дате (пустые в конец)
+    newsData.sort((a, b) => {
+      const at = a.date ? a.date.getTime() : -Infinity;
+      const bt = b.date ? b.date.getTime() : -Infinity;
+      return bt - at;
+    });
+
     displayNews();
   } catch (error) {
     console.error("Fehler beim Laden von Nachrichten:", error);
-    document.getElementById("news-container").innerHTML = "<p>Fehler</p>";
+    if (container) container.innerHTML = "<p>Fehler</p>";
+    updatePaginationButtons?.();
+  }
+
+  // --- вспомогательные (локальные) ---
+  function resolveLocalPath(filename) {
+    if (!filename) return "";
+    const f = filename.trim();
+
+    // Если уже URL или абсолютный путь — оставляем как есть
+    if (
+      /^https?:\/\//i.test(f) ||
+      f.startsWith("/") ||
+      f.startsWith("./") ||
+      f.startsWith("../")
+    ) {
+      return f;
+    }
+
+    // Если просто имя файла — добавляем префикс "foto/"
+    return `foto/${f}`;
+  }
+
+  function parseDateFlexible(s) {
+    if (!s) return null;
+    const m = s.match(/^(\d{1,2})\.(\d{1,2})\.(\d{4})$/); // dd.mm.yyyy
+    if (m) {
+      const d = new Date(+m[3], +m[2] - 1, +m[1]);
+      return isNaN(d) ? null : d;
+    }
+    const d = new Date(s); // ISO и т.п.
+    return isNaN(d) ? null : d;
   }
 }
 
@@ -175,26 +221,6 @@ function displayNews() {
   setupCarousel();
   updatePaginationButtons();
 }
-
-// function setupToggleText() {
-//     document.querySelectorAll(".toggle-text").forEach(button => {
-//         button.addEventListener("click", function () {
-//             const newsItem = this.closest(".news-item");
-//             const shortText = newsItem.querySelector(".short-text");
-//             const fullText = newsItem.querySelector(".full-text");
-
-//             if (fullText.style.display === "none") {
-//                 shortText.style.display = "none";
-//                 fullText.style.display = "block";
-//                 this.textContent = "Ausblenden";
-//             } else {
-//                 shortText.style.display = "block";
-//                 fullText.style.display = "none";
-//                 this.textContent = "Weiterlesen";
-//             }
-//         });
-//     });
-// }
 
 function setupToggleText() {
   document.querySelectorAll(".toggle-text").forEach((button) => {
@@ -277,7 +303,6 @@ document.addEventListener("DOMContentLoaded", function () {
     navList.classList.toggle("active");
   });
 
-  // Анимация появления секций при прокрутке
   const sections = document.querySelectorAll(".section");
 
   const revealSections = () => {
@@ -290,5 +315,5 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 
   window.addEventListener("scroll", revealSections);
-  revealSections(); // Проверка при загрузке страницы
+  revealSections();
 });
